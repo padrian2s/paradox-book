@@ -1,33 +1,35 @@
 # Paradox Simulators Project
 
 ## Overview
-An interactive single-page HTML application featuring 49 paradoxes sourced from Hacker News, each with interactive simulators to explore and understand the concepts.
+An interactive single-page HTML application featuring 104 paradoxes sourced from Hacker News, each with interactive simulators to explore and understand the concepts.
 
 ## Data Source
 - Paradoxes fetched from HN Algolia API (`https://hn.algolia.com/api/v1/search?query=paradox&tags=story`)
-- Pages 0-30 processed
+- Pages 0-35 processed (API limit reached at ~1000 results)
 - Points (HN upvotes) preserved for each paradox
+- Additional paradoxes implemented from paradoxes.md documentation
 
 ## Files
-- `index.html` - Main interactive application (~7800 lines)
-- `paradoxes.md` - Documentation of 115 paradoxes with descriptions
+- `index.html` - Main interactive application (~10,300 lines)
+- `paradoxes.md` - Documentation of 125 paradoxes with descriptions
 - `CONTEXT.md` - This file
 
 ## Features
 
 ### Navigation
-13 category sections:
+18 category sections:
 - Mathematical, Physics, Social, Technology, Scientific
 - Probability, Infinity, Advanced, Behavior, Economics
-- Philosophy, Decisions, Quantum
+- Philosophy, Decisions, Quantum, Logic
+- More Physics, More Tech, More Social, More Logic, More Economics
 
 ### Sort by Points
 - Toggle between "By Category" and "By Points" views
 - Ranked list showing all paradoxes sorted by HN points
 - Click any item to jump to its simulator
-- Displays total paradox count (49 Paradoxes)
+- Displays total paradox count (104 Paradoxes)
 
-### Interactive Simulators (49 total)
+### Interactive Simulators (104 total)
 Each paradox card includes:
 - Title with HN points badge
 - Description
@@ -42,33 +44,59 @@ Each paradox card includes:
 - **Simpson's Paradox** - Medical treatment comparison
 - **St. Petersburg Paradox** - Infinite expected value casino
 - **Braess' Paradox** - Traffic network with togglable shortcut
+- **Banach-Tarski** - Sphere duplication animation
 
 ### Physics
 - **Fermi Paradox** - Drake equation calculator
 - **Grandfather Paradox** - Timeline visualizer
 - **Twin Paradox** - Relativistic aging calculator
 - **Olbers' Paradox** - Universe darkness simulator
+- **Black Hole Information** - Information loss explorer
+- **Dome Paradox** - Norton's dome animation
 
 ### Probability
 - **Monty Hall** - Door selection game with statistics
 - **Birthday Paradox** - Collision probability calculator
-- **Sleeping Beauty** - Credence explorer
+- **Sleeping Beauty** - Halfer/thirder debate explorer
 - **Two Envelopes** - Expected value paradox
+- **Allais Paradox** - Certainty effect gamble choices
 
 ### Decision Theory
 - **Newcomb's Paradox** - Predictor box game
 - **Parrondo's Paradox** - Two losing games become winning
 - **Ellsberg Paradox** - Ambiguity aversion urn experiment
 
-### Logic
+### Logic & Math
 - **Liar's Paradox** - Truth value chain explorer
 - **Ross-Littlewood** - Infinite ball experiment
 - **Ship of Theseus** - Identity replacement tracker
+- **Sorites Paradox** - Heap grain removal slider
+- **Grelling-Nelson** - Autological/heterological word tester
+- **Curry's Paradox** - Self-referential proof generator
+- **Berry Paradox** - Definability contradiction explorer
+- **Drinker Paradox** - Pub logic scenarios
 
-### Economics
+### Economics & Medical
 - **Dollar Auction** - Escalation trap simulator
 - **Paradox of Thrift** - Savings vs spending economy
 - **Jevons Paradox** - Efficiency rebound effect
+- **Commuting Paradox** - Life satisfaction calculator
+- **Clothesline Paradox** - GDP vs sustainability comparison
+- **Obesity-Hunger** - Food budget nutrition explorer
+- **Full-Fat Paradox** - Dairy health comparison
+- **Elephant Brain** - Neuron distribution comparison
+
+### Technology
+- **Python Paradox** - Language choice hiring impact
+- **Static Site Paradox** - Complexity comparison
+- **Captcha Paradox** - AI training feedback loop
+- **AI Deskilling** - Automation dependency explorer
+
+### Psychology & Social
+- **Violence Paradox** - Historical violence rates
+- **Paradox of Choice** - Option overload satisfaction
+- **Willpower Paradox** - Resistance vs avoidance strategy
+- **Dating App Paradox** - Choice overload in dating
 
 ## Technical Stack
 - Pure HTML/CSS/JavaScript (no frameworks)
@@ -95,3 +123,12 @@ Each paradox card includes:
 4. Added sort by points feature
 5. Fixed Simpson's Paradox (clone ID issue)
 6. Added paradox count display
+7. Pages 31-35: Added paradoxes 116-125, 10 more simulators (Logic section)
+8. Implemented all remaining paradoxes from paradoxes.md:
+   - Chunk 1 (More Physics): Black Hole Information, Archer's, Hydrostatic, Faint Sun, EPR, Heat Death, Banach-Tarski, Two Capacitor (8 simulators)
+   - Chunk 2 (More Tech): Python, Static Site, Open Source, Captcha, Generative AI, AI Deskilling, Miserable Programmer (7 simulators)
+   - Chunk 3 (More Social): Sleeping Beauty, Unexpected Hanging, Choice, Willpower, Hedonism, Dating App, Hispanic, Violence (8 simulators)
+   - Chunk 4 (More Logic): Sorites, Dome, Bootstrap, Bonini's, Polanyi's, Grelling-Nelson, Curry's, Berry, Allais, Inventor's, Drinker (11 simulators)
+   - Chunk 5 (More Economics): Commuting, Free-Time, Eligible Bachelor, Deming, Karl Popper, Clothesline, Obesity-Hunger, Low Birth-Weight, Full-Fat, Elephant Brain (10 simulators)
+
+**Total: 104 interactive paradox simulators**

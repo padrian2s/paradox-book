@@ -898,6 +898,80 @@ As AI handles more tasks, humans lose skills. But when AI fails (and it will), w
 
 ---
 
+## Logic & Philosophy (Pages 31-33)
+
+---
+
+### 116. French Paradox (3 points)
+**Source:** HN Discussion
+
+Despite consuming rich food, butter, cheese, and wine, the French have lower rates of heart disease than Americans. This contradicts the assumption that saturated fat causes heart disease. Possible explanations include wine's antioxidants, smaller portions, or the social nature of French dining.
+
+---
+
+### 117. Buttered Cat Paradox (3 points)
+**Source:** HN Discussion
+
+A humorous thought experiment: Cats always land on their feet. Buttered toast always lands butter-side down. What happens if you strap buttered toast to a cat's back and drop it? Logically, the cat-toast system should hover indefinitely, spinning just above the ground.
+
+---
+
+### 118. Raven Paradox (3 points)
+**Source:** HN Discussion
+
+To confirm "All ravens are black," finding a black raven helps. But logically equivalent is "All non-black things are non-ravens." So seeing a green apple (non-black, non-raven) should also confirm that all ravens are black! Yet this seems absurd.
+
+---
+
+### 119. Bell's Theorem / Quantum Venn Diagram Paradox (3 points)
+**Source:** HN Discussion
+
+Quantum mechanics violates classical probability. If you measure particle properties A, B, C, classical logic says certain combinations must occur. But quantum experiments show correlations that are mathematically impossible under classical assumptions - proving reality is non-local or non-real.
+
+---
+
+### 120. 2FA Backup Paradox (3 points)
+**Source:** HN Discussion
+
+Two-factor authentication requires something you have (phone). But what if you lose it? Backup codes defeat the purpose - they're something you know, like a password. Storing them securely is as hard as the original problem. Perfect security vs. practical recovery are fundamentally at odds.
+
+---
+
+### 121. Paradox of Meritocracy (3 points)
+**Source:** HN Discussion
+
+Organizations that explicitly adopt meritocratic ideals often become less fair. Believing the system is fair makes people less vigilant about bias. Managers in "meritocracies" give larger bonuses to men, assuming any disparity must reflect merit differences.
+
+---
+
+### 122. Transparency Paradox (3 points)
+**Source:** HN Discussion
+
+More workplace transparency can backfire. When employees know they're being watched, they hide creative work, avoid risks, and game metrics. The most innovative work happens in the shadows. Perfect visibility kills the experimentation that drives progress.
+
+---
+
+### 123. Gender-Equality Paradox (3 points)
+**Source:** HN Discussion
+
+Countries with the most gender equality (Scandinavia) have the fewest women in STEM. Countries with less equality (Algeria, Tunisia) have more women engineers. When women are free to choose, they gravitate away from STEM. Freedom amplifies rather than eliminates gender differences in preferences.
+
+---
+
+### 124. Aggregator Paradox (3 points)
+**Source:** HN Discussion
+
+Platforms that aggregate content to serve users better eventually control that content. Google, Facebook, and Amazon started by organizing others' information. Now they dictate terms to creators. The aggregator's power to distribute becomes power over what gets created.
+
+---
+
+### 125. Radioactive Wildlife Paradox (3 points)
+**Source:** HN Discussion
+
+The Chernobyl exclusion zone is now a wildlife paradise. Despite high radiation, animal populations have exploded. The absence of humans is better for wildlife than the presence of radiation is harmful. Our normal presence is more damaging than nuclear fallout.
+
+---
+
 ## Summary Table (Extended)
 
 | Paradox | Category | Key Insight |

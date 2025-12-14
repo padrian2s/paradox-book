@@ -410,6 +410,12 @@
         <a href="#philosophy">Philosophy</a>
         <a href="#decisions">Decisions</a>
         <a href="#quantum">Quantum</a>
+        <a href="#logic">Logic</a>
+        <a href="#morephysics">More Physics</a>
+        <a href="#moretech">More Tech</a>
+        <a href="#moresocial">More Social</a>
+        <a href="#morelogic">More Logic</a>
+        <a href="#moreeconomics">More Economics</a>
     </nav>
 
     <div class="sort-controls">
@@ -7680,6 +7686,2453 @@
                 simulateMarket();
                 runToleranceSim();
             });
+        </script>
+
+        <!-- LOGIC & MISC PARADOXES -->
+        <section id="logic">
+            <h2 class="category-title">Logic & Miscellaneous Paradoxes</h2>
+
+            <!-- French Paradox -->
+            <div class="paradox-card">
+                <h3>French Paradox <span class="points">3 pts</span></h3>
+                <p class="description">The French eat rich food, butter, cheese, and drink wine - yet have lower heart disease rates than Americans. How can a high-fat diet be heart-healthy?</p>
+
+                <div class="simulator">
+                    <h4>Diet Comparison Simulator</h4>
+                    <div class="controls">
+                        <div class="control-group">
+                            <label>Saturated Fat (g/day): <span id="french-fat-val">40</span></label>
+                            <input type="range" id="french-fat" min="10" max="80" value="40" oninput="updateFrenchParadox()">
+                        </div>
+                        <div class="control-group">
+                            <label>Red Wine (glasses/day): <span id="french-wine-val">2</span></label>
+                            <input type="range" id="french-wine" min="0" max="5" value="2" oninput="updateFrenchParadox()">
+                        </div>
+                        <div class="control-group">
+                            <label>Meal Duration (min): <span id="french-meal-val">60</span></label>
+                            <input type="range" id="french-meal" min="10" max="120" value="60" oninput="updateFrenchParadox()">
+                        </div>
+                    </div>
+
+                    <div class="stats-grid">
+                        <div class="stat-box">
+                            <div class="stat-value" id="french-american">100%</div>
+                            <div class="stat-label">US Heart Disease Risk</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-value" id="french-french">60%</div>
+                            <div class="stat-label">French Heart Disease Risk</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-value" id="french-reduction">40%</div>
+                            <div class="stat-label">Risk Reduction</div>
+                        </div>
+                    </div>
+
+                    <div class="result" id="french-result">
+                        <p id="french-explanation">Despite similar fat intake, the French have 40% lower heart disease. Wine's resveratrol, slower eating, and social dining may explain the paradox.</p>
+                    </div>
+
+                    <div class="insight">
+                        The paradox suggests that diet quality isn't just about nutrients - context matters. How you eat may be as important as what you eat.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Buttered Cat Paradox -->
+            <div class="paradox-card">
+                <h3>Buttered Cat Paradox <span class="points">3 pts</span></h3>
+                <p class="description">Cats always land on their feet. Buttered toast always lands butter-side down. What happens if you strap toast (butter up) to a cat's back?</p>
+
+                <div class="simulator">
+                    <h4>Anti-Gravity Cat Generator</h4>
+                    <div class="controls">
+                        <button onclick="dropButteredCat()">Drop the Cat-Toast!</button>
+                        <button onclick="resetButteredCat()">Reset</button>
+                    </div>
+
+                    <div id="buttered-cat-viz" style="height: 250px; background: var(--bg); border-radius: 0.5rem; position: relative; overflow: hidden; margin-top: 1rem;">
+                        <div id="cat-toast" style="position: absolute; left: 50%; top: 20px; transform: translateX(-50%); font-size: 3rem; transition: top 0.5s ease-in;">
+                            🐱🍞
+                        </div>
+                        <div id="cat-spin" style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); font-size: 4rem; display: none;">
+                            🐱🍞
+                        </div>
+                        <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 20px; background: #4a5568;"></div>
+                    </div>
+
+                    <div class="result" id="buttered-cat-result">
+                        <p>Press "Drop" to test the hypothesis...</p>
+                    </div>
+
+                    <div class="insight">
+                        This humorous paradox illustrates how combining two "laws" can lead to absurd conclusions. It's a lesson in the limits of folk physics.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Raven Paradox -->
+            <div class="paradox-card">
+                <h3>Raven Paradox <span class="points">3 pts</span></h3>
+                <p class="description">To confirm "All ravens are black," seeing a black raven helps. But logically, seeing a green apple (non-black, non-raven) should also confirm it!</p>
+
+                <div class="simulator">
+                    <h4>Evidence Confirmation Explorer</h4>
+                    <div class="controls">
+                        <button onclick="observeRaven('black')">🐦‍⬛ See Black Raven</button>
+                        <button onclick="observeRaven('apple')">🍏 See Green Apple</button>
+                        <button onclick="observeRaven('white')">🕊️ See White Bird</button>
+                        <button onclick="resetRaven()">Reset</button>
+                    </div>
+
+                    <div class="stats-grid">
+                        <div class="stat-box">
+                            <div class="stat-value" id="raven-ravens">0</div>
+                            <div class="stat-label">Black Ravens Seen</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-value" id="raven-apples">0</div>
+                            <div class="stat-label">Green Apples Seen</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-value" id="raven-confidence">0%</div>
+                            <div class="stat-label">Confidence Level</div>
+                        </div>
+                    </div>
+
+                    <div class="result" id="raven-result">
+                        <p>Observe objects to build evidence for "All ravens are black"</p>
+                    </div>
+
+                    <div class="insight">
+                        The logical equivalence of "All ravens are black" and "All non-black things are non-ravens" creates this paradox. Both observations technically confirm the hypothesis!
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bell's Theorem Paradox -->
+            <div class="paradox-card">
+                <h3>Bell's Theorem Paradox <span class="points">3 pts</span></h3>
+                <p class="description">Quantum correlations violate classical probability rules. Measurements on entangled particles show results that are mathematically impossible under classical assumptions.</p>
+
+                <div class="simulator">
+                    <h4>Quantum vs Classical Probability</h4>
+                    <div class="controls">
+                        <button onclick="runBellExperiment()">Run Experiment</button>
+                        <button onclick="runBellMany()">Run 1000x</button>
+                        <button onclick="resetBell()">Reset</button>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                        <div class="stat-box">
+                            <h5 style="color: var(--primary); margin-bottom: 0.5rem;">Classical Prediction</h5>
+                            <p>Correlation ≤ <span style="color: var(--accent); font-size: 1.5rem;">2.0</span></p>
+                            <p style="font-size: 0.8rem; color: var(--muted);">(Bell inequality limit)</p>
+                        </div>
+                        <div class="stat-box">
+                            <h5 style="color: var(--secondary); margin-bottom: 0.5rem;">Quantum Result</h5>
+                            <p>Correlation = <span id="bell-result" style="color: var(--accent); font-size: 1.5rem;">?</span></p>
+                            <p style="font-size: 0.8rem; color: var(--muted);">Measured: <span id="bell-trials">0</span> trials</p>
+                        </div>
+                    </div>
+
+                    <div class="result" id="bell-explanation">
+                        <p>Run experiments to see if nature violates Bell's inequality...</p>
+                    </div>
+
+                    <div class="insight">
+                        Quantum mechanics predicts (and experiments confirm) correlations up to 2√2 ≈ 2.83, violating the classical limit. Reality is either non-local or non-realistic!
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2FA Backup Paradox -->
+            <div class="paradox-card">
+                <h3>2FA Backup Paradox <span class="points">3 pts</span></h3>
+                <p class="description">Two-factor authentication needs backups for when you lose your device. But secure backups defeat the purpose of 2FA!</p>
+
+                <div class="simulator">
+                    <h4>Security Trade-off Calculator</h4>
+                    <div class="controls">
+                        <div class="control-group">
+                            <label>Backup Method:</label>
+                            <select id="backup-method" onchange="calculate2FA()">
+                                <option value="none">No Backup</option>
+                                <option value="codes">Printed Backup Codes</option>
+                                <option value="email">Email Recovery</option>
+                                <option value="sms">SMS Recovery</option>
+                                <option value="hardware">Second Hardware Key</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="stats-grid">
+                        <div class="stat-box">
+                            <div class="stat-value" id="twofa-security">100%</div>
+                            <div class="stat-label">Security Level</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-value" id="twofa-recovery">0%</div>
+                            <div class="stat-label">Recovery Chance</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-value" id="twofa-effective">50%</div>
+                            <div class="stat-label">Effective Protection</div>
+                        </div>
+                    </div>
+
+                    <div class="result" id="twofa-result">
+                        <p id="twofa-explanation">Without backups: Maximum security, but lose access if device is lost.</p>
+                    </div>
+
+                    <div class="insight">
+                        Perfect security and perfect recoverability are mutually exclusive. Every backup method introduces a potential attack vector.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Paradox of Meritocracy -->
+            <div class="paradox-card">
+                <h3>Paradox of Meritocracy <span class="points">3 pts</span></h3>
+                <p class="description">Organizations that explicitly embrace meritocracy often become less fair. Believing the system is fair makes people less vigilant about bias.</p>
+
+                <div class="simulator">
+                    <h4>Organizational Bias Simulator</h4>
+                    <div class="controls">
+                        <div class="control-group">
+                            <label>Organization Type:</label>
+                            <select id="merit-type" onchange="updateMeritocracy()">
+                                <option value="explicit">Explicitly Meritocratic</option>
+                                <option value="neutral">No Stated Values</option>
+                                <option value="aware">Bias-Aware Training</option>
+                            </select>
+                        </div>
+                        <button onclick="runMeritSim()">Run Bonus Allocation</button>
+                    </div>
+
+                    <div class="stats-grid">
+                        <div class="stat-box">
+                            <div class="stat-value" id="merit-male">$0</div>
+                            <div class="stat-label">Avg Male Bonus</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-value" id="merit-female">$0</div>
+                            <div class="stat-label">Avg Female Bonus</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-value" id="merit-gap">0%</div>
+                            <div class="stat-label">Gender Gap</div>
+                        </div>
+                    </div>
+
+                    <div class="result" id="merit-result">
+                        <p>Select organization type and run simulation...</p>
+                    </div>
+
+                    <div class="insight">
+                        Research shows managers in "meritocratic" companies give larger bonuses to men, assuming any gap must reflect merit. Awareness of bias reduces it.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Transparency Paradox -->
+            <div class="paradox-card">
+                <h3>Transparency Paradox <span class="points">3 pts</span></h3>
+                <p class="description">More workplace transparency can backfire. When employees know they're being watched, they hide creative work and avoid risks.</p>
+
+                <div class="simulator">
+                    <h4>Workplace Monitoring Simulator</h4>
+                    <div class="controls">
+                        <div class="control-group">
+                            <label>Monitoring Level: <span id="trans-level-val">50%</span></label>
+                            <input type="range" id="trans-level" min="0" max="100" value="50" oninput="updateTransparency()">
+                        </div>
+                    </div>
+
+                    <div class="stats-grid">
+                        <div class="stat-box">
+                            <div class="stat-value" id="trans-visible">50%</div>
+                            <div class="stat-label">Visible Work</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-value" id="trans-hidden">30%</div>
+                            <div class="stat-label">Hidden Innovation</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-value" id="trans-total">80%</div>
+                            <div class="stat-label">Total Output</div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 1rem; height: 30px; background: var(--bg); border-radius: 0.5rem; overflow: hidden; display: flex;">
+                        <div id="trans-bar-visible" style="background: var(--primary); height: 100%; transition: width 0.3s;"></div>
+                        <div id="trans-bar-hidden" style="background: var(--secondary); height: 100%; transition: width 0.3s;"></div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--muted); margin-top: 0.25rem;">
+                        <span>■ Visible Work</span>
+                        <span>■ Hidden Innovation</span>
+                    </div>
+
+                    <div class="result" id="trans-result">
+                        <p>Adjust monitoring level to see its effect on productivity...</p>
+                    </div>
+
+                    <div class="insight">
+                        Optimal productivity often requires some privacy. The most innovative work happens when people feel free to experiment without judgment.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gender-Equality Paradox -->
+            <div class="paradox-card">
+                <h3>Gender-Equality Paradox <span class="points">3 pts</span></h3>
+                <p class="description">Countries with more gender equality have fewer women in STEM. More freedom amplifies rather than eliminates gender differences in career preferences.</p>
+
+                <div class="simulator">
+                    <h4>STEM Gender Gap by Country</h4>
+                    <div class="controls">
+                        <button onclick="showGenderData()">Show Data</button>
+                    </div>
+
+                    <div id="gender-chart" style="margin-top: 1rem;">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;">
+                            <div class="stat-box">
+                                <h5 style="color: var(--primary); margin-bottom: 0.5rem;">High Equality Countries</h5>
+                                <p style="font-size: 0.9rem;">Finland, Norway, Sweden</p>
+                                <p style="color: var(--accent); font-size: 1.5rem;" id="gender-high">~20%</p>
+                                <p style="font-size: 0.8rem; color: var(--muted);">Women in STEM</p>
+                            </div>
+                            <div class="stat-box">
+                                <h5 style="color: var(--secondary); margin-bottom: 0.5rem;">Lower Equality Countries</h5>
+                                <p style="font-size: 0.9rem;">Algeria, Tunisia, UAE</p>
+                                <p style="color: var(--accent); font-size: 1.5rem;" id="gender-low">~40%</p>
+                                <p style="font-size: 0.8rem; color: var(--muted);">Women in STEM</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="result" id="gender-result">
+                        <p>When women are free to choose any career, they often choose non-STEM fields. In countries where STEM offers economic security, more women pursue it.</p>
+                    </div>
+
+                    <div class="insight">
+                        This paradox suggests that gender differences in interests may be partly innate, emerging more strongly when external pressures are removed.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Aggregator Paradox -->
+            <div class="paradox-card">
+                <h3>Aggregator Paradox <span class="points">3 pts</span></h3>
+                <p class="description">Platforms that aggregate content to serve users better eventually control that content. The aggregator's power to distribute becomes power over creation.</p>
+
+                <div class="simulator">
+                    <h4>Platform Power Simulator</h4>
+                    <div class="controls">
+                        <div class="control-group">
+                            <label>Platform Maturity: <span id="agg-maturity-val">1</span> years</label>
+                            <input type="range" id="agg-maturity" min="1" max="20" value="1" oninput="updateAggregator()">
+                        </div>
+                    </div>
+
+                    <div class="stats-grid">
+                        <div class="stat-box">
+                            <div class="stat-value" id="agg-creators">1000</div>
+                            <div class="stat-label">Content Creators</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-value" id="agg-power">10%</div>
+                            <div class="stat-label">Platform Power</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-value" id="agg-revenue">50%</div>
+                            <div class="stat-label">Creator Revenue Share</div>
+                        </div>
+                    </div>
+
+                    <div class="result" id="agg-result">
+                        <p>Year 1: Platform attracts creators by offering better distribution than alternatives.</p>
+                    </div>
+
+                    <div class="insight">
+                        Google, Facebook, Amazon all followed this pattern: aggregate to serve users → become essential → dictate terms to creators.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Radioactive Wildlife Paradox -->
+            <div class="paradox-card">
+                <h3>Radioactive Wildlife Paradox <span class="points">3 pts</span></h3>
+                <p class="description">The Chernobyl exclusion zone is now a wildlife paradise. The absence of humans is better for animals than the presence of radiation is harmful.</p>
+
+                <div class="simulator">
+                    <h4>Chernobyl Ecosystem Simulator</h4>
+                    <div class="controls">
+                        <div class="control-group">
+                            <label>Years Since Evacuation: <span id="rad-years-val">0</span></label>
+                            <input type="range" id="rad-years" min="0" max="40" value="0" oninput="updateRadioactive()">
+                        </div>
+                    </div>
+
+                    <div class="stats-grid">
+                        <div class="stat-box">
+                            <div class="stat-value" id="rad-radiation">100%</div>
+                            <div class="stat-label">Radiation Level</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-value" id="rad-wildlife">20%</div>
+                            <div class="stat-label">Wildlife Population</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-value" id="rad-species">10</div>
+                            <div class="stat-label">Large Species</div>
+                        </div>
+                    </div>
+
+                    <div id="rad-animals" style="margin-top: 1rem; font-size: 2rem; text-align: center; min-height: 50px;">
+                        🏚️
+                    </div>
+
+                    <div class="result" id="rad-result">
+                        <p>1986: Humans evacuate. Radiation at lethal levels.</p>
+                    </div>
+
+                    <div class="insight">
+                        Wolves, wild boar, deer, and even rare species like Przewalski's horses thrive in the zone. Human absence trumps radiation harm.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            // French Paradox
+            function updateFrenchParadox() {
+                const fat = parseInt(document.getElementById('french-fat').value);
+                const wine = parseInt(document.getElementById('french-wine').value);
+                const meal = parseInt(document.getElementById('french-meal').value);
+
+                document.getElementById('french-fat-val').textContent = fat;
+                document.getElementById('french-wine-val').textContent = wine;
+                document.getElementById('french-meal-val').textContent = meal;
+
+                // US baseline risk (simple model)
+                const usRisk = 100;
+
+                // French risk factors (wine reduces, slow meals reduce)
+                const wineReduction = wine * 8; // Up to 40% reduction
+                const mealReduction = Math.min((meal - 10) / 3, 15); // Up to 15% for slow eating
+                const frenchRisk = Math.max(40, 100 - wineReduction - mealReduction);
+
+                document.getElementById('french-american').textContent = usRisk + '%';
+                document.getElementById('french-french').textContent = frenchRisk.toFixed(0) + '%';
+                document.getElementById('french-reduction').textContent = (usRisk - frenchRisk).toFixed(0) + '%';
+
+                let explanation = '';
+                if (wine >= 2 && meal >= 45) {
+                    explanation = `With ${wine} glasses of wine and ${meal}-minute meals, the French lifestyle provides significant cardioprotective benefits despite ${fat}g daily fat.`;
+                } else if (wine >= 2) {
+                    explanation = `Moderate wine consumption (${wine} glasses) provides resveratrol and polyphenols that may explain some protection.`;
+                } else if (meal >= 45) {
+                    explanation = `Longer meal times (${meal} min) allow better digestion and social bonding, reducing stress-related heart risk.`;
+                } else {
+                    explanation = `Without wine or leisurely dining, the French advantages are minimal. The paradox requires the full lifestyle.`;
+                }
+                document.getElementById('french-explanation').textContent = explanation;
+            }
+
+            // Buttered Cat Paradox
+            let catAnimating = false;
+            function dropButteredCat() {
+                if (catAnimating) return;
+                catAnimating = true;
+
+                const catToast = document.getElementById('cat-toast');
+                const catSpin = document.getElementById('cat-spin');
+                const result = document.getElementById('buttered-cat-result');
+
+                // Drop animation
+                catToast.style.top = '100px';
+
+                setTimeout(() => {
+                    catToast.style.display = 'none';
+                    catSpin.style.display = 'block';
+
+                    // Spin animation
+                    let rotation = 0;
+                    const spinInterval = setInterval(() => {
+                        rotation += 30;
+                        catSpin.style.transform = `translate(-50%, -50%) rotate(${rotation}deg)`;
+                    }, 50);
+
+                    result.innerHTML = `
+                        <p style="color: var(--accent); font-size: 1.25rem;">⚡ PARADOX ACTIVATED! ⚡</p>
+                        <p>The cat-toast system hovers indefinitely, spinning in place!</p>
+                        <p>Cat wants to land feet-down. Toast wants to land butter-down.</p>
+                        <p>Neither can win. Free energy discovered! 🎉</p>
+                    `;
+
+                    // Keep spinning
+                    setTimeout(() => {
+                        clearInterval(spinInterval);
+                        catAnimating = false;
+                    }, 5000);
+                }, 500);
+            }
+
+            function resetButteredCat() {
+                catAnimating = false;
+                const catToast = document.getElementById('cat-toast');
+                const catSpin = document.getElementById('cat-spin');
+                catToast.style.display = 'block';
+                catToast.style.top = '20px';
+                catSpin.style.display = 'none';
+                catSpin.style.transform = 'translate(-50%, -50%)';
+                document.getElementById('buttered-cat-result').innerHTML = '<p>Press "Drop" to test the hypothesis...</p>';
+            }
+
+            // Raven Paradox
+            let ravenStats = { ravens: 0, apples: 0 };
+            function observeRaven(type) {
+                const result = document.getElementById('raven-result');
+
+                if (type === 'black') {
+                    ravenStats.ravens++;
+                    result.innerHTML = `<p>🐦‍⬛ <strong>Black raven observed!</strong> This directly confirms "All ravens are black." Strong evidence!</p>`;
+                } else if (type === 'apple') {
+                    ravenStats.apples++;
+                    result.innerHTML = `<p>🍏 <strong>Green apple observed!</strong> This is non-black AND non-raven, confirming "All non-black things are non-ravens" - logically equivalent to our hypothesis! <em>But does it really help?</em></p>`;
+                } else if (type === 'white') {
+                    result.innerHTML = `<p>🕊️ <strong>White bird observed!</strong> Is it a raven? If yes, hypothesis FALSIFIED! If no, it's irrelevant. You'd need to check...</p>`;
+                }
+
+                document.getElementById('raven-ravens').textContent = ravenStats.ravens;
+                document.getElementById('raven-apples').textContent = ravenStats.apples;
+
+                // Ravens count way more than apples for confidence
+                const confidence = Math.min(99, ravenStats.ravens * 10 + ravenStats.apples * 0.0001);
+                document.getElementById('raven-confidence').textContent = confidence.toFixed(2) + '%';
+            }
+
+            function resetRaven() {
+                ravenStats = { ravens: 0, apples: 0 };
+                document.getElementById('raven-ravens').textContent = '0';
+                document.getElementById('raven-apples').textContent = '0';
+                document.getElementById('raven-confidence').textContent = '0%';
+                document.getElementById('raven-result').innerHTML = '<p>Observe objects to build evidence for "All ravens are black"</p>';
+            }
+
+            // Bell's Theorem
+            let bellTrials = 0;
+            let bellCorrelation = 0;
+
+            function runBellExperiment() {
+                bellTrials++;
+                // Quantum mechanics predicts violation of Bell inequality
+                // Simulate getting correlation around 2.4-2.8 (> 2.0 classical limit)
+                const thisResult = 2.0 + Math.random() * 0.828; // Up to 2√2
+                bellCorrelation = ((bellCorrelation * (bellTrials - 1)) + thisResult) / bellTrials;
+
+                updateBellDisplay();
+            }
+
+            function runBellMany() {
+                for (let i = 0; i < 1000; i++) {
+                    bellTrials++;
+                    const thisResult = 2.0 + Math.random() * 0.828;
+                    bellCorrelation = ((bellCorrelation * (bellTrials - 1)) + thisResult) / bellTrials;
+                }
+                updateBellDisplay();
+            }
+
+            function updateBellDisplay() {
+                document.getElementById('bell-result').textContent = bellCorrelation.toFixed(3);
+                document.getElementById('bell-trials').textContent = bellTrials;
+
+                const explanation = document.getElementById('bell-explanation');
+                if (bellCorrelation > 2.0) {
+                    explanation.innerHTML = `<p style="color: #22c55e;"><strong>BELL INEQUALITY VIOLATED!</strong></p>
+                        <p>Measured correlation ${bellCorrelation.toFixed(3)} > 2.0 (classical limit)</p>
+                        <p>This proves quantum mechanics is correct and reality is stranger than classical physics allows!</p>`;
+                } else {
+                    explanation.innerHTML = `<p>Current correlation: ${bellCorrelation.toFixed(3)}. Run more trials...</p>`;
+                }
+            }
+
+            function resetBell() {
+                bellTrials = 0;
+                bellCorrelation = 0;
+                document.getElementById('bell-result').textContent = '?';
+                document.getElementById('bell-trials').textContent = '0';
+                document.getElementById('bell-explanation').innerHTML = '<p>Run experiments to see if nature violates Bell\'s inequality...</p>';
+            }
+
+            // 2FA Backup Paradox
+            function calculate2FA() {
+                const method = document.getElementById('backup-method').value;
+                let security, recovery, explanation;
+
+                switch(method) {
+                    case 'none':
+                        security = 100;
+                        recovery = 0;
+                        explanation = 'Maximum security, but lose your device = lose access forever. No backup means no weakness, but also no recovery.';
+                        break;
+                    case 'codes':
+                        security = 70;
+                        recovery = 80;
+                        explanation = 'Backup codes are just passwords on paper. Anyone who finds them bypasses your 2FA entirely. Store them in a safe?';
+                        break;
+                    case 'email':
+                        security = 40;
+                        recovery = 95;
+                        explanation = 'Email recovery means your email is now a single point of failure. Compromise email = compromise everything.';
+                        break;
+                    case 'sms':
+                        security = 30;
+                        recovery = 90;
+                        explanation = 'SMS is vulnerable to SIM swapping attacks. Attackers can port your number and receive your codes.';
+                        break;
+                    case 'hardware':
+                        security = 90;
+                        recovery = 70;
+                        explanation = 'A second hardware key maintains security but costs money, and you still need to store it somewhere safe.';
+                        break;
+                }
+
+                const effective = (security * 0.5 + recovery * 0.5);
+
+                document.getElementById('twofa-security').textContent = security + '%';
+                document.getElementById('twofa-recovery').textContent = recovery + '%';
+                document.getElementById('twofa-effective').textContent = effective.toFixed(0) + '%';
+                document.getElementById('twofa-explanation').textContent = explanation;
+
+                // Color code security
+                const secEl = document.getElementById('twofa-security');
+                secEl.style.color = security >= 70 ? '#22c55e' : security >= 40 ? '#f59e0b' : '#ef4444';
+            }
+
+            // Paradox of Meritocracy
+            function runMeritSim() {
+                const type = document.getElementById('merit-type').value;
+                let maleBonus, femaleBonus, explanation;
+
+                // Based on actual research findings
+                switch(type) {
+                    case 'explicit':
+                        maleBonus = 12000 + Math.random() * 2000;
+                        femaleBonus = 9000 + Math.random() * 1500;
+                        explanation = 'PARADOX CONFIRMED: In explicitly meritocratic orgs, managers assume any gap reflects merit differences. Men receive 25% higher bonuses on average.';
+                        break;
+                    case 'neutral':
+                        maleBonus = 10500 + Math.random() * 1500;
+                        femaleBonus = 9500 + Math.random() * 1500;
+                        explanation = 'Without meritocracy claims, managers are slightly more careful. Gap is smaller but still exists due to implicit bias.';
+                        break;
+                    case 'aware':
+                        maleBonus = 10000 + Math.random() * 1500;
+                        femaleBonus = 10000 + Math.random() * 1500;
+                        explanation = 'Bias-awareness training makes managers question their assumptions. Bonuses are more equitable.';
+                        break;
+                }
+
+                const gap = ((maleBonus - femaleBonus) / maleBonus * 100);
+
+                document.getElementById('merit-male').textContent = '$' + maleBonus.toFixed(0);
+                document.getElementById('merit-female').textContent = '$' + femaleBonus.toFixed(0);
+                document.getElementById('merit-gap').textContent = gap.toFixed(1) + '%';
+                document.getElementById('merit-gap').style.color = gap > 10 ? '#ef4444' : gap > 5 ? '#f59e0b' : '#22c55e';
+                document.getElementById('merit-result').innerHTML = '<p>' + explanation + '</p>';
+            }
+
+            function updateMeritocracy() {
+                document.getElementById('merit-male').textContent = '$0';
+                document.getElementById('merit-female').textContent = '$0';
+                document.getElementById('merit-gap').textContent = '0%';
+                document.getElementById('merit-result').innerHTML = '<p>Click "Run Bonus Allocation" to simulate...</p>';
+            }
+
+            // Transparency Paradox
+            function updateTransparency() {
+                const level = parseInt(document.getElementById('trans-level').value);
+                document.getElementById('trans-level-val').textContent = level + '%';
+
+                // High monitoring = high visible work but low innovation
+                // Low monitoring = lower visible work but high innovation
+                const visible = 30 + level * 0.5; // 30-80%
+                const hidden = Math.max(5, 50 - level * 0.45); // 50-5%
+                const total = visible + hidden;
+
+                document.getElementById('trans-visible').textContent = visible.toFixed(0) + '%';
+                document.getElementById('trans-hidden').textContent = hidden.toFixed(0) + '%';
+                document.getElementById('trans-total').textContent = total.toFixed(0) + '%';
+
+                document.getElementById('trans-bar-visible').style.width = visible + '%';
+                document.getElementById('trans-bar-hidden').style.width = hidden + '%';
+
+                let explanation;
+                if (level < 30) {
+                    explanation = 'Low monitoring: Employees experiment freely. Innovation thrives but some slack off.';
+                } else if (level < 70) {
+                    explanation = 'Moderate monitoring: Balance of accountability and freedom. Near-optimal total output.';
+                } else {
+                    explanation = 'High monitoring: Everyone looks busy, but creative risk-taking disappears. Innovation dies in the shadows.';
+                }
+                document.getElementById('trans-result').innerHTML = '<p>' + explanation + '</p>';
+            }
+
+            // Gender-Equality Paradox
+            function showGenderData() {
+                // Animate the numbers
+                const highEl = document.getElementById('gender-high');
+                const lowEl = document.getElementById('gender-low');
+
+                let high = 0, low = 0;
+                const interval = setInterval(() => {
+                    high = Math.min(20, high + 1);
+                    low = Math.min(40, low + 2);
+                    highEl.textContent = high + '%';
+                    lowEl.textContent = low + '%';
+                    if (high >= 20 && low >= 40) {
+                        clearInterval(interval);
+                        highEl.textContent = '~20%';
+                        lowEl.textContent = '~40%';
+                    }
+                }, 50);
+            }
+
+            // Aggregator Paradox
+            function updateAggregator() {
+                const years = parseInt(document.getElementById('agg-maturity').value);
+                document.getElementById('agg-maturity-val').textContent = years;
+
+                // Platform grows, power increases, creator share decreases
+                const creators = Math.floor(1000 * Math.pow(1.5, years));
+                const power = Math.min(95, 10 + years * 4.5);
+                const revenue = Math.max(15, 50 - years * 2);
+
+                document.getElementById('agg-creators').textContent = creators.toLocaleString();
+                document.getElementById('agg-power').textContent = power.toFixed(0) + '%';
+                document.getElementById('agg-revenue').textContent = revenue.toFixed(0) + '%';
+
+                document.getElementById('agg-power').style.color = power > 70 ? '#ef4444' : power > 40 ? '#f59e0b' : '#22c55e';
+                document.getElementById('agg-revenue').style.color = revenue < 25 ? '#ef4444' : revenue < 40 ? '#f59e0b' : '#22c55e';
+
+                let explanation;
+                if (years <= 3) {
+                    explanation = `Year ${years}: Platform attracts creators with generous terms. "We're just helping you reach audiences!"`;
+                } else if (years <= 8) {
+                    explanation = `Year ${years}: Platform becomes dominant. Creators depend on it. Terms start shifting in platform's favor.`;
+                } else if (years <= 15) {
+                    explanation = `Year ${years}: Platform controls discovery. Creators must pay for visibility. Revenue share drops.`;
+                } else {
+                    explanation = `Year ${years}: Platform IS the market. Take it or leave it. Creators are commoditized suppliers.`;
+                }
+                document.getElementById('agg-result').innerHTML = '<p>' + explanation + '</p>';
+            }
+
+            // Radioactive Wildlife Paradox
+            function updateRadioactive() {
+                const years = parseInt(document.getElementById('rad-years').value);
+                document.getElementById('rad-years-val').textContent = years;
+
+                // Radiation decays, wildlife rebounds
+                const radiation = Math.max(5, 100 * Math.exp(-years * 0.05));
+                const wildlife = Math.min(400, 20 + years * 10);
+                const species = Math.min(60, 10 + years * 1.5);
+
+                document.getElementById('rad-radiation').textContent = radiation.toFixed(0) + '%';
+                document.getElementById('rad-wildlife').textContent = wildlife.toFixed(0) + '%';
+                document.getElementById('rad-species').textContent = species.toFixed(0);
+
+                document.getElementById('rad-radiation').style.color = radiation > 50 ? '#ef4444' : radiation > 20 ? '#f59e0b' : '#22c55e';
+                document.getElementById('rad-wildlife').style.color = '#22c55e';
+
+                // Show animals based on years
+                let animals = '🏚️';
+                if (years > 0) animals = '🐀🐁';
+                if (years > 5) animals = '🐀🐁🦊🐗';
+                if (years > 10) animals = '🦊🐗🦌🐺';
+                if (years > 20) animals = '🦊🐗🦌🐺🦅🦉';
+                if (years > 30) animals = '🐺🦌🐗🦊🦅🦉🐴🦬';
+
+                document.getElementById('rad-animals').textContent = animals;
+
+                let explanation;
+                if (years === 0) {
+                    explanation = '1986: Humans evacuate. Radiation at lethal levels. Wildlife flees or dies.';
+                } else if (years < 10) {
+                    explanation = `${1986 + years}: Small animals return first. Radiation still high but decreasing.`;
+                } else if (years < 25) {
+                    explanation = `${1986 + years}: Large mammals thrive. Wolf packs, wild boar, deer. Forest reclaims towns.`;
+                } else {
+                    explanation = `${1986 + years}: Wildlife paradise. More biodiversity than before the disaster. Przewalski's horses introduced.`;
+                }
+                document.getElementById('rad-result').innerHTML = '<p>' + explanation + '</p>';
+            }
+
+            // Initialize
+            window.addEventListener('load', () => {
+                updateFrenchParadox();
+                calculate2FA();
+                updateTransparency();
+                updateAggregator();
+                updateRadioactive();
+            });
+        </script>
+
+        <!-- MORE PHYSICS PARADOXES -->
+        <section id="morephysics">
+            <h2 class="category-title">More Physics & Science Paradoxes</h2>
+
+            <!-- Black Hole Information Paradox -->
+            <div class="paradox-card">
+                <h3>Black Hole Information Paradox <span class="points">96 pts</span></h3>
+                <p class="description">Information cannot be destroyed, but black holes seem to destroy everything. Where does the information go when a black hole evaporates?</p>
+                <div class="simulator">
+                    <h4>Information Loss Simulator</h4>
+                    <div class="controls">
+                        <button onclick="dropIntoBH()">Drop Object</button>
+                        <button onclick="resetBH()">Reset</button>
+                    </div>
+                    <div id="bh-viz" style="height: 150px; background: var(--bg); border-radius: 0.5rem; position: relative; margin-top: 1rem; display: flex; align-items: center; justify-content: center;">
+                        <div style="width: 60px; height: 60px; background: radial-gradient(circle, #000 60%, transparent 70%); border-radius: 50%; box-shadow: 0 0 20px rgba(139,92,246,0.5);"></div>
+                        <div id="bh-object" style="position: absolute; left: 20%; font-size: 1.5rem; transition: all 1s;">📦</div>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-box"><div class="stat-value" id="bh-in">0</div><div class="stat-label">Info Bits In</div></div>
+                        <div class="stat-box"><div class="stat-value" id="bh-out">0</div><div class="stat-label">Hawking Bits Out</div></div>
+                        <div class="stat-box"><div class="stat-value" id="bh-lost">❓</div><div class="stat-label">Info Preserved?</div></div>
+                    </div>
+                    <div class="insight">Hawking radiation is thermal - it carries no information about what fell in. This violates quantum mechanics!</div>
+                </div>
+            </div>
+
+            <!-- Archer's Paradox -->
+            <div class="paradox-card">
+                <h3>Archer's Paradox <span class="points">276 pts</span></h3>
+                <p class="description">An arrow must flex around the bow handle to hit a target it's not initially pointed at!</p>
+                <div class="simulator">
+                    <h4>Arrow Flight</h4>
+                    <div class="controls">
+                        <button onclick="fireArrow()">Fire Arrow</button>
+                        <button onclick="resetArrow()">Reset</button>
+                    </div>
+                    <div id="archer-viz" style="height: 100px; background: var(--bg); border-radius: 0.5rem; position: relative; margin-top: 1rem;">
+                        <div style="position: absolute; left: 20px; top: 50%; transform: translateY(-50%); font-size: 2rem;">🏹</div>
+                        <div id="arrow-obj" style="position: absolute; left: 50px; top: 50%; transform: translateY(-50%); transition: left 1s;">➡️</div>
+                        <div style="position: absolute; right: 20px; top: 50%; transform: translateY(-50%); font-size: 2rem;">🎯</div>
+                    </div>
+                    <div class="result" id="archer-result"><p>The arrow flexes around the bow riser during release, allowing it to fly straight despite the obstruction.</p></div>
+                </div>
+            </div>
+
+            <!-- Hydrostatic Paradox -->
+            <div class="paradox-card">
+                <h3>Hydrostatic Paradox <span class="points">4 pts</span></h3>
+                <p class="description">Pressure at the bottom depends only on height, not container shape. A narrow tube exerts the same pressure as a wide tank!</p>
+                <div class="simulator">
+                    <h4>Pressure Comparison</h4>
+                    <div class="controls">
+                        <div class="control-group">
+                            <label>Height: <span id="hydro-h-val">10</span>m</label>
+                            <input type="range" id="hydro-h" min="1" max="30" value="10" oninput="updateHydro()">
+                        </div>
+                    </div>
+                    <div style="display: flex; justify-content: space-around; margin-top: 1rem;">
+                        <div style="width: 60px; height: 80px; border: 2px solid var(--muted); background: linear-gradient(to top, #3b82f6 50%, transparent 50%);"></div>
+                        <div style="width: 20px; height: 80px; border: 2px solid var(--muted); background: linear-gradient(to top, #3b82f6 50%, transparent 50%);"></div>
+                        <div style="width: 40px; height: 80px; border: 2px solid var(--muted); background: linear-gradient(to top, #3b82f6 50%, transparent 50%); clip-path: polygon(30% 0, 70% 0, 100% 100%, 0 100%);"></div>
+                    </div>
+                    <div class="result"><p>Bottom pressure: <span class="result-value" id="hydro-p">98</span> kPa - <span style="color: var(--accent);">SAME for all shapes!</span></p></div>
+                </div>
+            </div>
+
+            <!-- Faint Sun Paradox -->
+            <div class="paradox-card">
+                <h3>Faint Sun Paradox <span class="points">15 pts</span></h3>
+                <p class="description">The early Sun was 30% dimmer, yet Earth had liquid water. It should have been frozen!</p>
+                <div class="simulator">
+                    <h4>Early Earth Temperature</h4>
+                    <div class="controls">
+                        <div class="control-group">
+                            <label>Billion years ago: <span id="faint-val">4</span></label>
+                            <input type="range" id="faint-t" min="0" max="4" step="0.5" value="4" oninput="updateFaint()">
+                        </div>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-box"><div class="stat-value" id="faint-lum">70%</div><div class="stat-label">Solar Output</div></div>
+                        <div class="stat-box"><div class="stat-value" id="faint-exp">-40°C</div><div class="stat-label">Expected</div></div>
+                        <div class="stat-box"><div class="stat-value" id="faint-act">+15°C</div><div class="stat-label">Evidence Shows</div></div>
+                    </div>
+                    <div class="insight">Solutions: more greenhouse gases, different albedo, or tidal heating from a closer Moon.</div>
+                </div>
+            </div>
+
+            <!-- EPR Paradox -->
+            <div class="paradox-card">
+                <h3>EPR Paradox <span class="points">5 pts</span></h3>
+                <p class="description">Measuring one entangled particle instantly affects another light-years away - "spooky action at a distance."</p>
+                <div class="simulator">
+                    <h4>Entanglement Experiment</h4>
+                    <div class="controls">
+                        <button onclick="measureEPR('A')">Measure A</button>
+                        <button onclick="measureEPR('B')">Measure B</button>
+                        <button onclick="resetEPR()">New Pair</button>
+                    </div>
+                    <div style="display: flex; justify-content: space-around; align-items: center; margin-top: 1rem;">
+                        <div class="stat-box" style="text-align: center;"><div style="font-size: 2rem;">⚛️</div><div id="epr-a">?</div></div>
+                        <div style="color: var(--muted);">〰️ entangled 〰️</div>
+                        <div class="stat-box" style="text-align: center;"><div style="font-size: 2rem;">⚛️</div><div id="epr-b">?</div></div>
+                    </div>
+                    <div class="result" id="epr-result"><p>Measure one particle to instantly determine the other!</p></div>
+                </div>
+            </div>
+
+            <!-- Heat Death Paradox -->
+            <div class="paradox-card">
+                <h3>Heat Death Paradox <span class="points">5 pts</span></h3>
+                <p class="description">If the universe were infinitely old, it would have reached maximum entropy. Why hasn't it?</p>
+                <div class="simulator">
+                    <h4>Universe Age Model</h4>
+                    <div class="controls">
+                        <button onclick="setHeatModel('finite')">Finite Age (13.8 Gyr)</button>
+                        <button onclick="setHeatModel('infinite')">Infinite Age</button>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-box"><div class="stat-value" id="heat-ent">45%</div><div class="stat-label">Entropy</div></div>
+                        <div class="stat-box"><div class="stat-value" id="heat-stars">✨</div><div class="stat-label">Stars?</div></div>
+                    </div>
+                    <div class="result" id="heat-result"><p>Finite age explains why we're not at heat death yet.</p></div>
+                </div>
+            </div>
+
+            <!-- Banach-Tarski Paradox -->
+            <div class="paradox-card">
+                <h3>Banach-Tarski Paradox <span class="points">97 pts</span></h3>
+                <p class="description">A sphere can be decomposed into pieces and reassembled into TWO identical spheres! Mathematical duplication!</p>
+                <div class="simulator">
+                    <h4>Sphere Duplication</h4>
+                    <div class="controls">
+                        <button onclick="runBanach()">Decompose & Reassemble</button>
+                        <button onclick="resetBanach()">Reset</button>
+                    </div>
+                    <div id="banach-viz" style="display: flex; justify-content: center; gap: 2rem; margin-top: 1rem; font-size: 3rem;">
+                        <span id="banach-1">🔵</span>
+                        <span id="banach-2" style="opacity: 0;">🔵</span>
+                    </div>
+                    <div class="result" id="banach-result"><p>Using the Axiom of Choice, we can cut a sphere into 5 pieces and rearrange them into 2 spheres!</p></div>
+                    <div class="insight">This only works with non-measurable sets - you can't do this with physical matter!</div>
+                </div>
+            </div>
+
+            <!-- Two Capacitor Paradox -->
+            <div class="paradox-card">
+                <h3>Two Capacitor Paradox <span class="points">438 pts</span></h3>
+                <p class="description">Connect a charged capacitor to an empty one. Energy is lost! Where does it go?</p>
+                <div class="simulator">
+                    <h4>Energy Conservation?</h4>
+                    <div class="controls">
+                        <button onclick="connectCaps()">Connect Capacitors</button>
+                        <button onclick="resetCaps()">Reset</button>
+                    </div>
+                    <div style="display: flex; justify-content: center; gap: 1rem; align-items: center; margin-top: 1rem;">
+                        <div class="stat-box" style="text-align: center;"><div id="cap1-v">10V</div><div class="stat-label">Cap 1</div></div>
+                        <div id="cap-wire" style="width: 50px; height: 4px; background: var(--muted);"></div>
+                        <div class="stat-box" style="text-align: center;"><div id="cap2-v">0V</div><div class="stat-label">Cap 2</div></div>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-box"><div class="stat-value" id="cap-e-before">50 J</div><div class="stat-label">Energy Before</div></div>
+                        <div class="stat-box"><div class="stat-value" id="cap-e-after">50 J</div><div class="stat-label">Energy After</div></div>
+                        <div class="stat-box"><div class="stat-value" id="cap-lost">0 J</div><div class="stat-label">Lost!</div></div>
+                    </div>
+                    <div class="insight">The "missing" energy is dissipated as heat in the wire resistance, or radiated as EM waves!</div>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            // Black Hole Info
+            let bhIn = 0;
+            function dropIntoBH() {
+                const obj = document.getElementById('bh-object');
+                obj.style.left = '50%';
+                obj.style.opacity = '0';
+                bhIn += 1024;
+                document.getElementById('bh-in').textContent = bhIn;
+                setTimeout(() => {
+                    const out = Math.floor(Math.random() * 50);
+                    document.getElementById('bh-out').textContent = out + ' (random)';
+                    document.getElementById('bh-lost').textContent = '❌ NO!';
+                    document.getElementById('bh-lost').style.color = '#ef4444';
+                }, 1000);
+            }
+            function resetBH() {
+                document.getElementById('bh-object').style.cssText = 'position: absolute; left: 20%; font-size: 1.5rem; transition: all 1s;';
+                bhIn = 0;
+                document.getElementById('bh-in').textContent = '0';
+                document.getElementById('bh-out').textContent = '0';
+                document.getElementById('bh-lost').textContent = '❓';
+                document.getElementById('bh-lost').style.color = '';
+            }
+
+            // Archer
+            function fireArrow() {
+                document.getElementById('arrow-obj').style.left = 'calc(100% - 60px)';
+                document.getElementById('archer-result').innerHTML = '<p style="color: var(--accent);"><strong>HIT!</strong> Arrow flexed around bow handle!</p>';
+            }
+            function resetArrow() {
+                document.getElementById('arrow-obj').style.left = '50px';
+                document.getElementById('archer-result').innerHTML = '<p>The arrow flexes around the bow riser during release.</p>';
+            }
+
+            // Hydrostatic
+            function updateHydro() {
+                const h = document.getElementById('hydro-h').value;
+                document.getElementById('hydro-h-val').textContent = h;
+                document.getElementById('hydro-p').textContent = (h * 9.8).toFixed(0);
+            }
+
+            // Faint Sun
+            function updateFaint() {
+                const t = parseFloat(document.getElementById('faint-t').value);
+                document.getElementById('faint-val').textContent = t;
+                document.getElementById('faint-lum').textContent = (100 - t * 7.5).toFixed(0) + '%';
+                document.getElementById('faint-exp').textContent = (-10 - t * 10).toFixed(0) + '°C';
+                document.getElementById('faint-act').textContent = '+' + (20 - t * 2).toFixed(0) + '°C';
+            }
+
+            // EPR
+            let eprDone = false;
+            function measureEPR(p) {
+                if (eprDone) return;
+                eprDone = true;
+                const spin = Math.random() > 0.5 ? '↑' : '↓';
+                const anti = spin === '↑' ? '↓' : '↑';
+                document.getElementById('epr-a').textContent = p === 'A' ? spin : anti;
+                document.getElementById('epr-b').textContent = p === 'B' ? spin : anti;
+                document.getElementById('epr-result').innerHTML = `<p style="color: var(--accent);">Measured ${p}! Other particle INSTANTLY becomes opposite - faster than light!</p>`;
+            }
+            function resetEPR() {
+                eprDone = false;
+                document.getElementById('epr-a').textContent = '?';
+                document.getElementById('epr-b').textContent = '?';
+                document.getElementById('epr-result').innerHTML = '<p>Measure one particle to instantly determine the other!</p>';
+            }
+
+            // Heat Death
+            function setHeatModel(m) {
+                if (m === 'finite') {
+                    document.getElementById('heat-ent').textContent = '45%';
+                    document.getElementById('heat-stars').textContent = '✨ Yes';
+                    document.getElementById('heat-result').innerHTML = '<p>Finite age explains current low entropy.</p>';
+                } else {
+                    document.getElementById('heat-ent').textContent = '100%';
+                    document.getElementById('heat-stars').textContent = '❌ No';
+                    document.getElementById('heat-result').innerHTML = '<p style="color: #ef4444;">PARADOX! Should be at max entropy with no stars!</p>';
+                }
+            }
+
+            // Banach-Tarski
+            function runBanach() {
+                document.getElementById('banach-1').textContent = '🔵';
+                document.getElementById('banach-2').style.opacity = '1';
+                document.getElementById('banach-result').innerHTML = '<p style="color: var(--accent);">ONE sphere became TWO identical spheres!</p>';
+            }
+            function resetBanach() {
+                document.getElementById('banach-2').style.opacity = '0';
+                document.getElementById('banach-result').innerHTML = '<p>Using the Axiom of Choice, we can duplicate a sphere!</p>';
+            }
+
+            // Two Capacitor
+            function connectCaps() {
+                document.getElementById('cap1-v').textContent = '5V';
+                document.getElementById('cap2-v').textContent = '5V';
+                document.getElementById('cap-wire').style.background = 'var(--accent)';
+                document.getElementById('cap-e-after').textContent = '25 J';
+                document.getElementById('cap-lost').textContent = '25 J!';
+                document.getElementById('cap-lost').style.color = '#ef4444';
+            }
+            function resetCaps() {
+                document.getElementById('cap1-v').textContent = '10V';
+                document.getElementById('cap2-v').textContent = '0V';
+                document.getElementById('cap-wire').style.background = 'var(--muted)';
+                document.getElementById('cap-e-before').textContent = '50 J';
+                document.getElementById('cap-e-after').textContent = '50 J';
+                document.getElementById('cap-lost').textContent = '0 J';
+                document.getElementById('cap-lost').style.color = '';
+            }
+        </script>
+
+        <!-- MORE TECHNOLOGY PARADOXES -->
+        <section id="moretech">
+            <h2 class="category-title">More Technology Paradoxes</h2>
+
+            <!-- Python Paradox -->
+            <div class="paradox-card">
+                <h3>Python Paradox <span class="points">148 pts</span></h3>
+                <p class="description">If a company uses a "hard" language, they'll get better programmers - those who learn for passion, not just jobs.</p>
+                <div class="simulator">
+                    <h4>Language Choice Effect</h4>
+                    <div class="controls">
+                        <select id="lang-choice" onchange="updateLangParadox()">
+                            <option value="java">Java (Popular, Required)</option>
+                            <option value="python">Python (Easy, Growing)</option>
+                            <option value="haskell">Haskell (Hard, Niche)</option>
+                            <option value="rust">Rust (Hard, Growing)</option>
+                        </select>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-box"><div class="stat-value" id="lang-pool">Large</div><div class="stat-label">Candidate Pool</div></div>
+                        <div class="stat-box"><div class="stat-value" id="lang-passion">40%</div><div class="stat-label">Passion-Driven</div></div>
+                        <div class="stat-box"><div class="stat-value" id="lang-quality">Medium</div><div class="stat-label">Avg Quality</div></div>
+                    </div>
+                    <div class="result" id="lang-result"><p>Java: Large pool but many learn just for jobs.</p></div>
+                </div>
+            </div>
+
+            <!-- Static Site Paradox -->
+            <div class="paradox-card">
+                <h3>Static Site Paradox <span class="points">546 pts</span></h3>
+                <p class="description">Static sites are "simpler" but often require more complex tooling than dynamic sites!</p>
+                <div class="simulator">
+                    <h4>Complexity Comparison</h4>
+                    <div class="controls">
+                        <button onclick="showSiteStack('dynamic')">Dynamic Site</button>
+                        <button onclick="showSiteStack('static')">Static Site</button>
+                    </div>
+                    <div id="site-stack" style="margin-top: 1rem; font-family: monospace; font-size: 0.85rem; background: var(--bg); padding: 1rem; border-radius: 0.5rem; min-height: 100px;"></div>
+                    <div class="stats-grid">
+                        <div class="stat-box"><div class="stat-value" id="site-deps">?</div><div class="stat-label">Dependencies</div></div>
+                        <div class="stat-box"><div class="stat-value" id="site-build">?</div><div class="stat-label">Build Steps</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Open Source Paradox -->
+            <div class="paradox-card">
+                <h3>Open Source Paradox <span class="points">368 pts</span></h3>
+                <p class="description">Companies give away code for free, yet make billions. How does giving away your product make money?</p>
+                <div class="simulator">
+                    <h4>Business Model</h4>
+                    <div class="controls">
+                        <select id="oss-model" onchange="updateOSSParadox()">
+                            <option value="support">Support/Consulting</option>
+                            <option value="saas">SaaS (Hosted)</option>
+                            <option value="opencore">Open Core</option>
+                            <option value="dual">Dual Licensing</option>
+                        </select>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-box"><div class="stat-value" id="oss-free">100%</div><div class="stat-label">Code Free</div></div>
+                        <div class="stat-box"><div class="stat-value" id="oss-rev">$$$</div><div class="stat-label">Revenue Source</div></div>
+                    </div>
+                    <div class="result" id="oss-result"><p>Red Hat model: Code is free, expertise is valuable.</p></div>
+                </div>
+            </div>
+
+            <!-- Captcha Paradox -->
+            <div class="paradox-card">
+                <h3>Captcha Paradox <span class="points">13 pts</span></h3>
+                <p class="description">CAPTCHAs designed to stop bots now train AI to be better at solving them!</p>
+                <div class="simulator">
+                    <h4>The Self-Defeating Loop</h4>
+                    <div class="controls">
+                        <button onclick="runCaptchaLoop()">Run Evolution</button>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-box"><div class="stat-value" id="captcha-gen">1</div><div class="stat-label">Generation</div></div>
+                        <div class="stat-box"><div class="stat-value" id="captcha-human">Easy</div><div class="stat-label">For Humans</div></div>
+                        <div class="stat-box"><div class="stat-value" id="captcha-bot">Hard</div><div class="stat-label">For Bots</div></div>
+                    </div>
+                    <div class="result" id="captcha-result"><p>Each CAPTCHA solved trains ML models to solve the next one...</p></div>
+                </div>
+            </div>
+
+            <!-- Generative AI Paradox -->
+            <div class="paradox-card">
+                <h3>Generative AI Paradox <span class="points">5 pts</span></h3>
+                <p class="description">What AI can create, it may not understand. LLMs generate sophisticated text without comprehension.</p>
+                <div class="simulator">
+                    <h4>Creation vs Understanding</h4>
+                    <div class="controls">
+                        <button onclick="testAIParadox('create')">Ask to Create</button>
+                        <button onclick="testAIParadox('explain')">Ask to Explain</button>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-box"><div class="stat-value" id="ai-create">✨</div><div class="stat-label">Creation Ability</div></div>
+                        <div class="stat-box"><div class="stat-value" id="ai-understand">❓</div><div class="stat-label">Understanding</div></div>
+                    </div>
+                    <div class="result" id="ai-paradox-result"><p>Can produce Shakespeare-quality prose, but does it "know" what it means?</p></div>
+                </div>
+            </div>
+
+            <!-- AI Deskilling Paradox -->
+            <div class="paradox-card">
+                <h3>AI Deskilling Paradox <span class="points">4 pts</span></h3>
+                <p class="description">As AI handles more tasks, humans lose skills. But when AI fails, we need those skills most!</p>
+                <div class="simulator">
+                    <h4>Skill Degradation Over Time</h4>
+                    <div class="controls">
+                        <div class="control-group">
+                            <label>AI Reliance: <span id="deskill-val">50</span>%</label>
+                            <input type="range" id="deskill-r" min="0" max="100" value="50" oninput="updateDeskill()">
+                        </div>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-box"><div class="stat-value" id="deskill-human">50%</div><div class="stat-label">Human Skill</div></div>
+                        <div class="stat-box"><div class="stat-value" id="deskill-ai">50%</div><div class="stat-label">AI Capability</div></div>
+                        <div class="stat-box"><div class="stat-value" id="deskill-risk">Low</div><div class="stat-label">Failure Risk</div></div>
+                    </div>
+                    <div class="result" id="deskill-result"><p>Balanced reliance maintains human capability.</p></div>
+                </div>
+            </div>
+
+            <!-- Miserable Programmer Paradox -->
+            <div class="paradox-card">
+                <h3>Miserable Programmer Paradox <span class="points">154 pts</span></h3>
+                <p class="description">The most productive programmers are often the most miserable - they see all the problems others miss.</p>
+                <div class="simulator">
+                    <h4>Awareness vs Happiness</h4>
+                    <div class="controls">
+                        <div class="control-group">
+                            <label>Code Awareness: <span id="misery-val">50</span>%</label>
+                            <input type="range" id="misery-a" min="0" max="100" value="50" oninput="updateMisery()">
+                        </div>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-box"><div class="stat-value" id="misery-bugs">50</div><div class="stat-label">Bugs You See</div></div>
+                        <div class="stat-box"><div class="stat-value" id="misery-happy">😐</div><div class="stat-label">Happiness</div></div>
+                        <div class="stat-box"><div class="stat-value" id="misery-prod">Medium</div><div class="stat-label">Productivity</div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            // Python Paradox
+            function updateLangParadox() {
+                const lang = document.getElementById('lang-choice').value;
+                const data = {
+                    java: { pool: 'Large', passion: '40%', quality: 'Medium', desc: 'Many learn for jobs, not love.' },
+                    python: { pool: 'Large', passion: '60%', quality: 'Medium-High', desc: 'Popular but also loved by hobbyists.' },
+                    haskell: { pool: 'Small', passion: '95%', quality: 'Very High', desc: 'Only enthusiasts bother - they\'re exceptional!' },
+                    rust: { pool: 'Medium', passion: '90%', quality: 'High', desc: 'Hard enough to filter, popular enough to attract.' }
+                };
+                const d = data[lang];
+                document.getElementById('lang-pool').textContent = d.pool;
+                document.getElementById('lang-passion').textContent = d.passion;
+                document.getElementById('lang-quality').textContent = d.quality;
+                document.getElementById('lang-result').innerHTML = `<p>${d.desc}</p>`;
+            }
+
+            // Static Site Paradox
+            function showSiteStack(type) {
+                const stacks = {
+                    dynamic: { deps: 3, build: 1, stack: 'PHP/WordPress\n└── Apache\n    └── MySQL\n\nDeploy: FTP upload' },
+                    static: { deps: 847, build: 6, stack: 'React + Gatsby\n├── Node.js\n├── npm (847 packages)\n├── Webpack\n├── Babel\n├── GraphQL\n└── 12 plugins\n\nDeploy: npm build → CI/CD → CDN' }
+                };
+                const s = stacks[type];
+                document.getElementById('site-stack').textContent = s.stack;
+                document.getElementById('site-deps').textContent = s.deps;
+                document.getElementById('site-build').textContent = s.build;
+            }
+
+            // Open Source Paradox
+            function updateOSSParadox() {
+                const model = document.getElementById('oss-model').value;
+                const data = {
+                    support: { free: '100%', rev: 'Services', desc: 'Red Hat: Code free, expertise costs.' },
+                    saas: { free: '100%', rev: 'Hosting', desc: 'GitLab: Run yourself free, or pay us to host.' },
+                    opencore: { free: '80%', rev: 'Premium', desc: 'Elastic: Core free, advanced features paid.' },
+                    dual: { free: '100%*', rev: 'Licenses', desc: 'MySQL: Free for open source, pay for proprietary use.' }
+                };
+                const d = data[model];
+                document.getElementById('oss-free').textContent = d.free;
+                document.getElementById('oss-rev').textContent = d.rev;
+                document.getElementById('oss-result').innerHTML = `<p>${d.desc}</p>`;
+            }
+
+            // Captcha Paradox
+            let captchaGen = 1;
+            function runCaptchaLoop() {
+                captchaGen++;
+                const human = captchaGen > 5 ? 'Very Hard' : captchaGen > 3 ? 'Hard' : 'Easy';
+                const bot = captchaGen > 5 ? 'Easy (trained!)' : captchaGen > 3 ? 'Medium' : 'Hard';
+                document.getElementById('captcha-gen').textContent = captchaGen;
+                document.getElementById('captcha-human').textContent = human;
+                document.getElementById('captcha-bot').textContent = bot;
+                document.getElementById('captcha-result').innerHTML = captchaGen > 5 ?
+                    '<p style="color: #ef4444;">PARADOX! CAPTCHAs are now harder for humans than bots!</p>' :
+                    '<p>Generation ' + captchaGen + ': Making CAPTCHAs harder trains better AI...</p>';
+            }
+
+            // Generative AI Paradox
+            function testAIParadox(action) {
+                if (action === 'create') {
+                    document.getElementById('ai-create').textContent = '✅ Excellent';
+                    document.getElementById('ai-understand').textContent = '❓';
+                    document.getElementById('ai-paradox-result').innerHTML = '<p>AI can write a sonnet about love without ever feeling it.</p>';
+                } else {
+                    document.getElementById('ai-understand').textContent = '🤷 Maybe?';
+                    document.getElementById('ai-paradox-result').innerHTML = '<p>AI can explain its output, but is that understanding or pattern matching?</p>';
+                }
+            }
+
+            // AI Deskilling
+            function updateDeskill() {
+                const r = parseInt(document.getElementById('deskill-r').value);
+                document.getElementById('deskill-val').textContent = r;
+                document.getElementById('deskill-human').textContent = (100 - r * 0.8).toFixed(0) + '%';
+                document.getElementById('deskill-ai').textContent = r + '%';
+                const risk = r > 80 ? 'Critical!' : r > 60 ? 'High' : r > 30 ? 'Medium' : 'Low';
+                document.getElementById('deskill-risk').textContent = risk;
+                document.getElementById('deskill-risk').style.color = r > 80 ? '#ef4444' : r > 60 ? '#f59e0b' : '#22c55e';
+                document.getElementById('deskill-result').innerHTML = r > 80 ?
+                    '<p style="color: #ef4444;">DANGER: If AI fails now, humans can\'t compensate!</p>' :
+                    '<p>Current balance: ' + (r > 50 ? 'AI-dependent' : 'Human-capable') + '</p>';
+            }
+
+            // Miserable Programmer
+            function updateMisery() {
+                const a = parseInt(document.getElementById('misery-a').value);
+                document.getElementById('misery-val').textContent = a;
+                document.getElementById('misery-bugs').textContent = Math.floor(a * 1.5);
+                const happy = a > 80 ? '😫' : a > 60 ? '😟' : a > 40 ? '😐' : '😊';
+                const prod = a > 80 ? 'Very High' : a > 60 ? 'High' : a > 40 ? 'Medium' : 'Low';
+                document.getElementById('misery-happy').textContent = happy;
+                document.getElementById('misery-prod').textContent = prod;
+            }
+        </script>
+
+        <!-- MORE SOCIAL/PSYCHOLOGY PARADOXES -->
+        <section id="moresocial">
+            <h2 class="category-title">More Social & Psychology Paradoxes</h2>
+
+            <!-- Sleeping Beauty Paradox -->
+            <div class="paradox-card">
+                <h3>Sleeping Beauty Paradox <span class="points">77 pts</span></h3>
+                <p class="description">Sleeping Beauty is woken and asked the probability the coin was heads. Is it 1/2 or 1/3?</p>
+                <div class="simulator">
+                    <h4>The Experiment</h4>
+                    <div class="controls">
+                        <button onclick="runSleepingBeauty()">Run Experiment</button>
+                        <button onclick="setSBView('halfer')">I'm a Halfer (1/2)</button>
+                        <button onclick="setSBView('thirder')">I'm a Thirder (1/3)</button>
+                    </div>
+                    <div class="result" id="sb-result">
+                        <p><strong>Setup:</strong> Coin flip Sunday. Heads = wake Monday only. Tails = wake Monday AND Tuesday (memory wiped). What's P(Heads) when woken?</p>
+                    </div>
+                    <div class="insight">Philosophers still debate this! Both 1/2 and 1/3 have valid arguments.</div>
+                </div>
+            </div>
+
+            <!-- Unexpected Hanging Paradox -->
+            <div class="paradox-card">
+                <h3>Unexpected Hanging Paradox <span class="points">77 pts</span></h3>
+                <p class="description">A judge says: "You'll be hanged one day next week, and it will be a surprise." Can this ever be true?</p>
+                <div class="simulator">
+                    <h4>Reasoning Chain</h4>
+                    <div class="controls">
+                        <button onclick="reasonHanging()">Follow the Logic</button>
+                        <button onclick="resetHanging()">Reset</button>
+                    </div>
+                    <div id="hanging-days" style="display: flex; gap: 0.5rem; margin-top: 1rem; justify-content: center;">
+                        <span class="stat-box" style="padding: 0.5rem;">Mon</span>
+                        <span class="stat-box" style="padding: 0.5rem;">Tue</span>
+                        <span class="stat-box" style="padding: 0.5rem;">Wed</span>
+                        <span class="stat-box" style="padding: 0.5rem;">Thu</span>
+                        <span class="stat-box" style="padding: 0.5rem;" id="hang-fri">Fri</span>
+                    </div>
+                    <div class="result" id="hanging-result"><p>Can Friday be the day? Can Thursday? Keep eliminating...</p></div>
+                </div>
+            </div>
+
+            <!-- Paradox of Choice -->
+            <div class="paradox-card">
+                <h3>Paradox of Choice <span class="points">54 pts</span></h3>
+                <p class="description">More options should make us happier, but too many choices leads to anxiety and regret.</p>
+                <div class="simulator">
+                    <h4>Jam Experiment</h4>
+                    <div class="controls">
+                        <div class="control-group">
+                            <label>Number of Jams: <span id="choice-val">6</span></label>
+                            <input type="range" id="choice-n" min="2" max="30" value="6" oninput="updateChoice()">
+                        </div>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-box"><div class="stat-value" id="choice-interest">60%</div><div class="stat-label">Stop to Look</div></div>
+                        <div class="stat-box"><div class="stat-value" id="choice-buy">30%</div><div class="stat-label">Actually Buy</div></div>
+                        <div class="stat-box"><div class="stat-value" id="choice-happy">High</div><div class="stat-label">Satisfaction</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Willpower Paradox -->
+            <div class="paradox-card">
+                <h3>Willpower Paradox <span class="points">91 pts</span></h3>
+                <p class="description">People with more self-control use it less. They structure life to avoid temptation.</p>
+                <div class="simulator">
+                    <h4>Self-Control Strategy</h4>
+                    <div class="controls">
+                        <button onclick="setWillpower('resist')">Rely on Willpower</button>
+                        <button onclick="setWillpower('avoid')">Avoid Temptation</button>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-box"><div class="stat-value" id="will-used">High</div><div class="stat-label">Willpower Used</div></div>
+                        <div class="stat-box"><div class="stat-value" id="will-success">60%</div><div class="stat-label">Success Rate</div></div>
+                    </div>
+                    <div class="result" id="will-result"><p>Choose your strategy...</p></div>
+                </div>
+            </div>
+
+            <!-- Paradox of Hedonism -->
+            <div class="paradox-card">
+                <h3>Paradox of Hedonism <span class="points">10 pts</span></h3>
+                <p class="description">Directly pursuing pleasure often leads to unhappiness. Happiness is a byproduct, not a goal.</p>
+                <div class="simulator">
+                    <h4>Happiness Pursuit</h4>
+                    <div class="controls">
+                        <button onclick="setHedonism('direct')">Chase Happiness</button>
+                        <button onclick="setHedonism('indirect')">Pursue Meaning</button>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-box"><div class="stat-value" id="hed-effort">100%</div><div class="stat-label">Effort</div></div>
+                        <div class="stat-box"><div class="stat-value" id="hed-happy">❓</div><div class="stat-label">Happiness Found</div></div>
+                    </div>
+                    <div class="result" id="hed-result"><p>Choose your approach to happiness...</p></div>
+                </div>
+            </div>
+
+            <!-- Dating App Paradox -->
+            <div class="paradox-card">
+                <h3>Dating App Paradox <span class="points">251 pts</span></h3>
+                <p class="description">Apps designed to help you find love make it harder. Infinite options = impossible choices.</p>
+                <div class="simulator">
+                    <h4>Dating Pool Size</h4>
+                    <div class="controls">
+                        <div class="control-group">
+                            <label>Matches Available: <span id="date-val">10</span></label>
+                            <input type="range" id="date-n" min="1" max="1000" value="10" oninput="updateDating()">
+                        </div>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-box"><div class="stat-value" id="date-commit">High</div><div class="stat-label">Commitment</div></div>
+                        <div class="stat-box"><div class="stat-value" id="date-satisfy">High</div><div class="stat-label">Satisfaction</div></div>
+                    </div>
+                    <div class="result" id="date-result"><p>Small pool: You commit and appreciate what you have.</p></div>
+                </div>
+            </div>
+
+            <!-- Hispanic Paradox -->
+            <div class="paradox-card">
+                <h3>Hispanic Paradox <span class="points">24 pts</span></h3>
+                <p class="description">Hispanic Americans live longer than white Americans despite lower income and healthcare access.</p>
+                <div class="simulator">
+                    <h4>Health Outcomes</h4>
+                    <div class="stats-grid">
+                        <div class="stat-box"><div class="stat-value">$52k</div><div class="stat-label">Median Income</div></div>
+                        <div class="stat-box"><div class="stat-value">81.8 yrs</div><div class="stat-label">Life Expectancy</div></div>
+                    </div>
+                    <div style="margin-top: 1rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; font-size: 0.9rem;">
+                        <div>White Americans: $74k income, 78.8 yrs</div>
+                        <div style="color: var(--accent);">Hispanic: Lower income, 3 years longer life!</div>
+                    </div>
+                    <div class="insight">Possible factors: family support, diet, selective migration, or the "healthy immigrant effect."</div>
+                </div>
+            </div>
+
+            <!-- Violence Paradox -->
+            <div class="paradox-card">
+                <h3>Violence Paradox <span class="points">25 pts</span></h3>
+                <p class="description">Despite news coverage, violence has dramatically declined over human history. We live in the most peaceful era ever.</p>
+                <div class="simulator">
+                    <h4>Violence Through History</h4>
+                    <div class="controls">
+                        <div class="control-group">
+                            <label>Era:</label>
+                            <select id="violence-era" onchange="updateViolence()">
+                                <option value="tribal">Tribal Era</option>
+                                <option value="medieval">Medieval</option>
+                                <option value="1900">Early 1900s</option>
+                                <option value="now" selected>Today</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-box"><div class="stat-value" id="viol-rate">0.7%</div><div class="stat-label">Death by Violence</div></div>
+                        <div class="stat-box"><div class="stat-value" id="viol-feel">High</div><div class="stat-label">Perceived Violence</div></div>
+                    </div>
+                    <div class="insight">Steven Pinker: "The past was a bloodbath." 24/7 news makes us think violence is increasing.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- More Logic Section -->
+        <section id="morelogic">
+            <h2 class="category-title">More Logic & Math</h2>
+
+            <!-- Sorites Paradox -->
+            <div class="paradox-card">
+                <h3>Sorites Paradox <span class="points">59 pts</span></h3>
+                <p class="description">Remove one grain from a heap and it's still a heap. But repeat enough times and you have no heap. When does it stop being a heap?</p>
+                <div class="simulator">
+                    <h4>Heap Builder</h4>
+                    <div class="controls">
+                        <div class="control-group">
+                            <label>Grains: <span id="sorites-val">1000</span></label>
+                            <input type="range" id="sorites-n" min="0" max="1000" value="1000" oninput="updateSorites()">
+                        </div>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-box"><div class="stat-value" id="sorites-grains">1000</div><div class="stat-label">Grains</div></div>
+                        <div class="stat-box"><div class="stat-value" id="sorites-status">🏔️ Heap</div><div class="stat-label">Classification</div></div>
+                    </div>
+                    <div class="result" id="sorites-result"><p>At what exact point does a heap cease to be a heap?</p></div>
+                    <div class="insight">Vague predicates have no sharp boundary. The paradox shows that our language contains inherent vagueness.</div>
+                </div>
+            </div>
+
+            <!-- Dome Paradox -->
+            <div class="paradox-card">
+                <h3>Dome Paradox <span class="points">10 pts</span></h3>
+                <p class="description">A ball balanced on a special dome can spontaneously start moving without any external cause, challenging Newtonian determinism.</p>
+                <div class="simulator">
+                    <h4>Norton's Dome</h4>
+                    <div class="controls">
+                        <button onclick="startDome()">Wait for Motion</button>
+                        <button onclick="resetDome()">Reset</button>
+                    </div>
+                    <canvas id="dome-canvas" width="300" height="200" style="background: var(--bg); border-radius: 0.5rem; display: block; margin: 1rem auto;"></canvas>
+                    <div class="result" id="dome-result"><p>The ball is perfectly balanced at the apex...</p></div>
+                    <div class="insight">Norton's dome shows Newtonian mechanics can be indeterministic - the ball can start moving at any time T≥0 without cause.</div>
+                </div>
+            </div>
+
+            <!-- Bootstrap Paradox -->
+            <div class="paradox-card">
+                <h3>Bootstrap Paradox <span class="points">10 pts</span></h3>
+                <p class="description">In time travel, information or objects exist without ever being created. Who composed Beethoven's symphonies if you gave them to him?</p>
+                <div class="simulator">
+                    <h4>Causal Loop</h4>
+                    <div class="controls">
+                        <button onclick="runBootstrap()">Travel Through Time</button>
+                    </div>
+                    <div style="display: flex; justify-content: center; align-items: center; gap: 1rem; margin: 1rem 0; flex-wrap: wrap;">
+                        <div id="boot-you" style="padding: 1rem; background: var(--primary); border-radius: 0.5rem; text-align: center;">
+                            <div>🧑 You</div>
+                            <div style="font-size: 0.8rem;">Has symphony</div>
+                        </div>
+                        <div style="font-size: 2rem;">→</div>
+                        <div id="boot-past" style="padding: 1rem; background: var(--card); border: 2px solid var(--muted); border-radius: 0.5rem; text-align: center;">
+                            <div>🎹 Young Beethoven</div>
+                            <div style="font-size: 0.8rem;">Receives symphony</div>
+                        </div>
+                        <div style="font-size: 2rem;">→</div>
+                        <div id="boot-future" style="padding: 1rem; background: var(--card); border: 2px solid var(--muted); border-radius: 0.5rem; text-align: center;">
+                            <div>📜 Published Work</div>
+                            <div style="font-size: 0.8rem;">You find it</div>
+                        </div>
+                    </div>
+                    <div class="result" id="boot-result"><p>Who originally composed the symphony?</p></div>
+                    <div class="insight">The information exists in a closed loop with no origin - a genuine ontological paradox.</div>
+                </div>
+            </div>
+
+            <!-- Bonini's Paradox -->
+            <div class="paradox-card">
+                <h3>Bonini's Paradox <span class="points">88 pts</span></h3>
+                <p class="description">As a model becomes more complete and realistic, it becomes harder to understand. A perfect model is as complex as reality itself.</p>
+                <div class="simulator">
+                    <h4>Model Complexity</h4>
+                    <div class="controls">
+                        <div class="control-group">
+                            <label>Model Detail: <span id="bonini-val">50%</span></label>
+                            <input type="range" id="bonini-n" min="0" max="100" value="50" oninput="updateBonini()">
+                        </div>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-box"><div class="stat-value" id="bonini-accuracy">Medium</div><div class="stat-label">Accuracy</div></div>
+                        <div class="stat-box"><div class="stat-value" id="bonini-understand">Medium</div><div class="stat-label">Understandability</div></div>
+                    </div>
+                    <div class="result" id="bonini-result"><p>The usefulness of a model depends on its simplicity, not just accuracy.</p></div>
+                    <div class="insight">"All models are wrong, but some are useful" - George Box. The goal is insight, not replication.</div>
+                </div>
+            </div>
+
+            <!-- Polanyi's Paradox -->
+            <div class="paradox-card">
+                <h3>Polanyi's Paradox <span class="points">88 pts</span></h3>
+                <p class="description">"We know more than we can tell." Much human knowledge is tacit and cannot be explicitly stated - which is why many skills are hard to automate.</p>
+                <div class="simulator">
+                    <h4>Tacit Knowledge Test</h4>
+                    <div class="controls">
+                        <button onclick="setPolanyi('bike')">Riding a Bike</button>
+                        <button onclick="setPolanyi('face')">Recognizing Faces</button>
+                        <button onclick="setPolanyi('chess')">Playing Chess</button>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-box"><div class="stat-value" id="pol-human">Easy</div><div class="stat-label">Human Ability</div></div>
+                        <div class="stat-box"><div class="stat-value" id="pol-explain">❓</div><div class="stat-label">Can Explain How?</div></div>
+                        <div class="stat-box"><div class="stat-value" id="pol-automate">❓</div><div class="stat-label">Automation Ease</div></div>
+                    </div>
+                    <div class="result" id="pol-result"><p>Select a skill to analyze...</p></div>
+                    <div class="insight">Explains Moravec's paradox: we can automate "hard" tasks (chess) but not "easy" ones (walking).</div>
+                </div>
+            </div>
+
+            <!-- Grelling-Nelson Paradox -->
+            <div class="paradox-card">
+                <h3>Grelling-Nelson Paradox <span class="points">7 pts</span></h3>
+                <p class="description">Is "heterological" (a word that doesn't describe itself) heterological? If yes, then no. If no, then yes.</p>
+                <div class="simulator">
+                    <h4>Word Classification</h4>
+                    <div class="controls">
+                        <button onclick="classifyWord('short')">Short</button>
+                        <button onclick="classifyWord('long')">Long</button>
+                        <button onclick="classifyWord('english')">English</button>
+                        <button onclick="classifyWord('heterological')">Heterological</button>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-box"><div class="stat-value" id="grell-word">-</div><div class="stat-label">Word</div></div>
+                        <div class="stat-box"><div class="stat-value" id="grell-type">-</div><div class="stat-label">Classification</div></div>
+                    </div>
+                    <div class="result" id="grell-result"><p>Autological words describe themselves. Heterological words don't.</p></div>
+                    <div class="insight">Like Russell's paradox, self-reference creates contradictions in natural language.</div>
+                </div>
+            </div>
+
+            <!-- Curry's Paradox -->
+            <div class="paradox-card">
+                <h3>Curry's Paradox <span class="points">23 pts</span></h3>
+                <p class="description">"If this sentence is true, then Santa exists." This seemingly absurd conditional can prove anything!</p>
+                <div class="simulator">
+                    <h4>Self-Referential Logic</h4>
+                    <div class="controls">
+                        <button onclick="runCurry('santa')">Prove Santa Exists</button>
+                        <button onclick="runCurry('unicorn')">Prove Unicorns Exist</button>
+                        <button onclick="runCurry('anything')">Prove Anything</button>
+                    </div>
+                    <div class="result" id="curry-result">
+                        <p>Let S = "If S is true, then [claim]"</p>
+                        <p>Step 1: Assume S is true</p>
+                        <p>Step 2: Then by S's definition, [claim] is true</p>
+                        <p>Step 3: We've proven "If S is true, then [claim]"</p>
+                        <p>Step 4: But that's exactly what S says! So S is true.</p>
+                        <p>Step 5: Therefore [claim] is true. 🤯</p>
+                    </div>
+                    <div class="insight">Curry's paradox shows that self-reference + modus ponens breaks classical logic.</div>
+                </div>
+            </div>
+
+            <!-- Berry Paradox -->
+            <div class="paradox-card">
+                <h3>Berry Paradox <span class="points">9 pts</span></h3>
+                <p class="description">"The smallest integer not definable in under sixty letters" - but that phrase has fewer than sixty letters!</p>
+                <div class="simulator">
+                    <h4>Definition Counter</h4>
+                    <div class="controls">
+                        <div class="control-group">
+                            <label>Max letters: <span id="berry-val">60</span></label>
+                            <input type="range" id="berry-n" min="20" max="100" value="60" oninput="updateBerry()">
+                        </div>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-box"><div class="stat-value" id="berry-phrase">57</div><div class="stat-label">Phrase Letters</div></div>
+                        <div class="stat-box"><div class="stat-value" id="berry-status">⚠️ Paradox!</div><div class="stat-label">Status</div></div>
+                    </div>
+                    <div class="result" id="berry-result"><p>The phrase defines a number by claiming it can't be defined with this few letters!</p></div>
+                    <div class="insight">Related to Gödel's incompleteness - "definability" itself cannot be well-defined.</div>
+                </div>
+            </div>
+
+            <!-- Allais Paradox -->
+            <div class="paradox-card">
+                <h3>Allais Paradox <span class="points">5 pts</span></h3>
+                <p class="description">Human choices in gambles systematically violate expected utility theory. Certainty has disproportionate psychological weight.</p>
+                <div class="simulator">
+                    <h4>Gamble Choice</h4>
+                    <p style="color: var(--muted); margin-bottom: 1rem;">Choice 1:</p>
+                    <div class="controls">
+                        <button onclick="setAllais(1, 'A')">A: 100% chance of $1M</button>
+                        <button onclick="setAllais(1, 'B')">B: 89% $1M, 10% $5M, 1% $0</button>
+                    </div>
+                    <p style="color: var(--muted); margin: 1rem 0;">Choice 2:</p>
+                    <div class="controls">
+                        <button onclick="setAllais(2, 'C')">C: 11% chance of $1M</button>
+                        <button onclick="setAllais(2, 'D')">D: 10% chance of $5M</button>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-box"><div class="stat-value" id="allais-c1">-</div><div class="stat-label">Choice 1</div></div>
+                        <div class="stat-box"><div class="stat-value" id="allais-c2">-</div><div class="stat-label">Choice 2</div></div>
+                    </div>
+                    <div class="result" id="allais-result"><p>Most people choose A and D - but this is inconsistent!</p></div>
+                    <div class="insight">The "certainty effect" - we overweight guaranteed outcomes vs probabilistic ones of equal expected value.</div>
+                </div>
+            </div>
+
+            <!-- Inventor's Paradox -->
+            <div class="paradox-card">
+                <h3>Inventor's Paradox <span class="points">5 pts</span></h3>
+                <p class="description">Sometimes it's easier to solve a more general problem than a specific one. The extra generality provides more angles of attack.</p>
+                <div class="simulator">
+                    <h4>Problem Approach</h4>
+                    <div class="controls">
+                        <button onclick="setInventor('specific')">Solve Specific Problem</button>
+                        <button onclick="setInventor('general')">Solve General Problem</button>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-box"><div class="stat-value" id="inv-scope">-</div><div class="stat-label">Problem Scope</div></div>
+                        <div class="stat-box"><div class="stat-value" id="inv-ease">-</div><div class="stat-label">Solution Ease</div></div>
+                        <div class="stat-box"><div class="stat-value" id="inv-insight">-</div><div class="stat-label">Insight Gained</div></div>
+                    </div>
+                    <div class="result" id="inv-result"><p>Compare the two approaches...</p></div>
+                    <div class="insight">George Pólya: "The more ambitious plan may have more chances of success."</div>
+                </div>
+            </div>
+
+            <!-- Drinker Paradox -->
+            <div class="paradox-card">
+                <h3>Drinker Paradox <span class="points">4 pts</span></h3>
+                <p class="description">"There is someone in the pub such that if they are drinking, everyone is drinking." This bizarre statement is always true!</p>
+                <div class="simulator">
+                    <h4>Pub Logic</h4>
+                    <div class="controls">
+                        <button onclick="setDrinker('all')">Everyone Drinking</button>
+                        <button onclick="setDrinker('some')">Some Drinking</button>
+                        <button onclick="setDrinker('none')">Nobody Drinking</button>
+                        <button onclick="setDrinker('empty')">Empty Pub</button>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-box"><div class="stat-value" id="drink-scene">🍺🍺🍺</div><div class="stat-label">Scene</div></div>
+                        <div class="stat-box"><div class="stat-value" id="drink-person">-</div><div class="stat-label">The Person</div></div>
+                    </div>
+                    <div class="result" id="drink-result"><p>Choose a scenario to find "the person"...</p></div>
+                    <div class="insight">The statement is vacuously true when someone isn't drinking (false → anything is true).</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- More Economics Section -->
+        <section id="moreeconomics">
+            <h2 class="category-title">More Economics & Medical</h2>
+
+            <!-- Commuting Paradox -->
+            <div class="paradox-card">
+                <h3>Commuting Paradox <span class="points">140 pts</span></h3>
+                <p class="description">People with long commutes report lower life satisfaction, yet millions choose to commute. The extra income doesn't compensate for lost time.</p>
+                <div class="simulator">
+                    <h4>Commute Calculator</h4>
+                    <div class="controls">
+                        <div class="control-group">
+                            <label>Daily Commute: <span id="commute-val">30</span> min</label>
+                            <input type="range" id="commute-n" min="0" max="120" value="30" oninput="updateCommute()">
+                        </div>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-box"><div class="stat-value" id="comm-year">130 hrs</div><div class="stat-label">Hours/Year</div></div>
+                        <div class="stat-box"><div class="stat-value" id="comm-salary">+$5K</div><div class="stat-label">Extra Salary</div></div>
+                        <div class="stat-box"><div class="stat-value" id="comm-happy">😊 Good</div><div class="stat-label">Life Satisfaction</div></div>
+                    </div>
+                    <div class="result" id="commute-result"><p>Research shows commuting is the activity that makes people least happy.</p></div>
+                    <div class="insight">To offset a 1-hour commute's unhappiness, you'd need a 40% salary increase.</div>
+                </div>
+            </div>
+
+            <!-- Free-Time Paradox -->
+            <div class="paradox-card">
+                <h3>Free-Time Paradox <span class="points">257 pts</span></h3>
+                <p class="description">Americans have more free time than ever but feel more rushed. Higher income people have less leisure but feel less busy.</p>
+                <div class="simulator">
+                    <h4>Time Perception</h4>
+                    <div class="controls">
+                        <button onclick="setFreeTime('low')">Low Income</button>
+                        <button onclick="setFreeTime('mid')">Middle Income</button>
+                        <button onclick="setFreeTime('high')">High Income</button>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-box"><div class="stat-value" id="ft-actual">-</div><div class="stat-label">Actual Free Time</div></div>
+                        <div class="stat-box"><div class="stat-value" id="ft-feel">-</div><div class="stat-label">Perceived Busyness</div></div>
+                    </div>
+                    <div class="result" id="ft-result"><p>Select an income level...</p></div>
+                    <div class="insight">Wealth buys busyness as a status symbol. Having "no time" signals importance.</div>
+                </div>
+            </div>
+
+            <!-- Eligible Bachelor Paradox -->
+            <div class="paradox-card">
+                <h3>Eligible Bachelor Paradox <span class="points">94 pts</span></h3>
+                <p class="description">Why do all the good partners seem taken? Selection bias and market dynamics create a dating pool where eligible partners are rare.</p>
+                <div class="simulator">
+                    <h4>Dating Market</h4>
+                    <div class="controls">
+                        <button onclick="runBachelor()">Run Simulation</button>
+                    </div>
+                    <div style="display: flex; justify-content: center; gap: 2rem; margin: 1rem 0; flex-wrap: wrap;">
+                        <div style="text-align: center;">
+                            <div style="font-size: 2rem;" id="bach-pool">👤👤👤👤👤</div>
+                            <div style="color: var(--muted);">Dating Pool</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 2rem;" id="bach-taken">💑💑💑</div>
+                            <div style="color: var(--muted);">Paired Off</div>
+                        </div>
+                    </div>
+                    <div class="result" id="bach-result"><p>Good partners get selected quickly, leaving the pool with disproportionately difficult matches.</p></div>
+                    <div class="insight">It's not your imagination - the stable marriage problem mathematically guarantees this outcome.</div>
+                </div>
+            </div>
+
+            <!-- Deming Paradox -->
+            <div class="paradox-card">
+                <h3>Deming Paradox <span class="points">283 pts</span></h3>
+                <p class="description">Operationally rigorous companies often aren't nice places to work. The practices that make companies efficient can make them unpleasant.</p>
+                <div class="simulator">
+                    <h4>Company Culture</h4>
+                    <div class="controls">
+                        <div class="control-group">
+                            <label>Operational Rigor: <span id="deming-val">50%</span></label>
+                            <input type="range" id="deming-n" min="0" max="100" value="50" oninput="updateDeming()">
+                        </div>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-box"><div class="stat-value" id="dem-efficiency">Medium</div><div class="stat-label">Efficiency</div></div>
+                        <div class="stat-box"><div class="stat-value" id="dem-pleasant">Medium</div><div class="stat-label">Pleasant to Work</div></div>
+                    </div>
+                    <div class="result" id="deming-result"><p>Balance operational excellence with human factors.</p></div>
+                    <div class="insight">Amazon, Toyota, McKinsey: great at execution, often described as "intense" cultures.</div>
+                </div>
+            </div>
+
+            <!-- Karl Popper Paradox -->
+            <div class="paradox-card">
+                <h3>Karl Popper Paradox <span class="points">147 pts</span></h3>
+                <p class="description">A tolerant society cannot tolerate intolerance. Unlimited tolerance leads to the disappearance of tolerance itself.</p>
+                <div class="simulator">
+                    <h4>Tolerance Dilemma</h4>
+                    <div class="controls">
+                        <button onclick="setPopper('tolerate')">Tolerate Intolerance</button>
+                        <button onclick="setPopper('reject')">Reject Intolerance</button>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-box"><div class="stat-value" id="pop-action">-</div><div class="stat-label">Action</div></div>
+                        <div class="stat-box"><div class="stat-value" id="pop-outcome">-</div><div class="stat-label">Long-term</div></div>
+                    </div>
+                    <div class="result" id="popper-result"><p>What should a tolerant society do?</p></div>
+                    <div class="insight">Popper: "We should claim the right to suppress the intolerant if necessary."</div>
+                </div>
+            </div>
+
+            <!-- Clothesline Paradox -->
+            <div class="paradox-card">
+                <h3>Clothesline Paradox <span class="points">12 pts</span></h3>
+                <p class="description">When you dry clothes on a clothesline instead of a dryer, GDP goes DOWN. Our economic metrics punish efficiency!</p>
+                <div class="simulator">
+                    <h4>Economic Impact</h4>
+                    <div class="controls">
+                        <button onclick="setClothesline('dryer')">Use Electric Dryer</button>
+                        <button onclick="setClothesline('line')">Use Clothesline</button>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-box"><div class="stat-value" id="cloth-energy">-</div><div class="stat-label">Energy Used</div></div>
+                        <div class="stat-box"><div class="stat-value" id="cloth-gdp">-</div><div class="stat-label">GDP Impact</div></div>
+                        <div class="stat-box"><div class="stat-value" id="cloth-env">-</div><div class="stat-label">Environment</div></div>
+                    </div>
+                    <div class="result" id="clothesline-result"><p>Compare the economic measurement...</p></div>
+                    <div class="insight">GDP measures activity, not well-being. Sustainable behavior can look like economic decline.</div>
+                </div>
+            </div>
+
+            <!-- Obesity-Hunger Paradox -->
+            <div class="paradox-card">
+                <h3>Obesity-Hunger Paradox <span class="points">13 pts</span></h3>
+                <p class="description">Poor people often face both hunger AND obesity. Cheap foods are calorie-dense but nutrient-poor.</p>
+                <div class="simulator">
+                    <h4>Food Budget Impact</h4>
+                    <div class="controls">
+                        <div class="control-group">
+                            <label>Daily Food Budget: $<span id="food-val">5</span></label>
+                            <input type="range" id="food-n" min="2" max="30" value="5" oninput="updateFood()">
+                        </div>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-box"><div class="stat-value" id="food-cal">High</div><div class="stat-label">Calories Access</div></div>
+                        <div class="stat-box"><div class="stat-value" id="food-nut">Low</div><div class="stat-label">Nutrition Quality</div></div>
+                        <div class="stat-box"><div class="stat-value" id="food-health">Poor</div><div class="stat-label">Health Outcome</div></div>
+                    </div>
+                    <div class="result" id="food-result"><p>Food insecurity leads to binge-eating when food is available.</p></div>
+                    <div class="insight">A McDonald's meal is $5. A salad is $12. Poverty forces calorie maximization.</div>
+                </div>
+            </div>
+
+            <!-- Low Birth-Weight Paradox -->
+            <div class="paradox-card">
+                <h3>Low Birth-Weight Paradox <span class="points">4 pts</span></h3>
+                <p class="description">Low birth weight babies of smokers have BETTER survival rates than low birth weight babies of non-smokers!</p>
+                <div class="simulator">
+                    <h4>Birth Weight Analysis</h4>
+                    <div class="controls">
+                        <button onclick="setBirthWeight('smoker')">Smoker's Baby (Low Weight)</button>
+                        <button onclick="setBirthWeight('nonsmoker')">Non-Smoker's Baby (Low Weight)</button>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-box"><div class="stat-value" id="bw-weight">Low</div><div class="stat-label">Birth Weight</div></div>
+                        <div class="stat-box"><div class="stat-value" id="bw-survival">-</div><div class="stat-label">Survival Rate</div></div>
+                    </div>
+                    <div class="result" id="bw-result"><p>Select a scenario...</p></div>
+                    <div class="insight">Confounding: smoking causes low weight (usually fine), but other causes of low weight are more serious.</div>
+                </div>
+            </div>
+
+            <!-- Full-Fat Paradox -->
+            <div class="paradox-card">
+                <h3>Full-Fat Paradox <span class="points">5 pts</span></h3>
+                <p class="description">Full-fat dairy may be healthier than low-fat. Despite more saturated fat, whole milk drinkers have lower diabetes risk.</p>
+                <div class="simulator">
+                    <h4>Dairy Choice</h4>
+                    <div class="controls">
+                        <button onclick="setDairy('lowfat')">Low-Fat Dairy</button>
+                        <button onclick="setDairy('fullfat')">Full-Fat Dairy</button>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-box"><div class="stat-value" id="dairy-fat">-</div><div class="stat-label">Saturated Fat</div></div>
+                        <div class="stat-box"><div class="stat-value" id="dairy-diabetes">-</div><div class="stat-label">Diabetes Risk</div></div>
+                        <div class="stat-box"><div class="stat-value" id="dairy-satiety">-</div><div class="stat-label">Satiety</div></div>
+                    </div>
+                    <div class="result" id="dairy-result"><p>Compare the health outcomes...</p></div>
+                    <div class="insight">Low-fat products often add sugar. Fat isn't the villain we thought.</div>
+                </div>
+            </div>
+
+            <!-- Elephant Brain Paradox -->
+            <div class="paradox-card">
+                <h3>Elephant Brain Paradox <span class="points">5 pts</span></h3>
+                <p class="description">Elephants have 3x more neurons than humans. Why aren't they smarter? Their neurons are mostly in the cerebellum, not the cortex.</p>
+                <div class="simulator">
+                    <h4>Brain Comparison</h4>
+                    <div class="controls">
+                        <button onclick="setBrain('human')">Human Brain</button>
+                        <button onclick="setBrain('elephant')">Elephant Brain</button>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-box"><div class="stat-value" id="brain-neurons">-</div><div class="stat-label">Total Neurons</div></div>
+                        <div class="stat-box"><div class="stat-value" id="brain-cortex">-</div><div class="stat-label">Cortical Neurons</div></div>
+                        <div class="stat-box"><div class="stat-value" id="brain-iq">-</div><div class="stat-label">Cognitive Ability</div></div>
+                    </div>
+                    <div class="result" id="brain-result"><p>Compare brain structure...</p></div>
+                    <div class="insight">It's not total neurons but WHERE they are. The cortex is the thinking part.</div>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            // Sleeping Beauty
+            function runSleepingBeauty() {
+                document.getElementById('sb-result').innerHTML = `
+                    <p><strong>Coin is:</strong> ${Math.random() > 0.5 ? 'HEADS (1 awakening)' : 'TAILS (2 awakenings)'}</p>
+                    <p>When asked "What's P(Heads)?", what should Beauty say?</p>
+                `;
+            }
+            function setSBView(view) {
+                const text = view === 'halfer' ?
+                    '<p style="color: var(--primary);"><strong>Halfer view:</strong> The coin was 50/50. Being woken doesn\'t change that. P(Heads) = 1/2</p>' :
+                    '<p style="color: var(--secondary);"><strong>Thirder view:</strong> There are 3 possible awakenings, only 1 is Heads. P(Heads) = 1/3</p>';
+                document.getElementById('sb-result').innerHTML = text;
+            }
+
+            // Unexpected Hanging
+            let hangStep = 0;
+            function reasonHanging() {
+                hangStep++;
+                const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'];
+                const container = document.getElementById('hanging-days');
+                const result = document.getElementById('hanging-result');
+
+                if (hangStep <= 5) {
+                    const day = 5 - hangStep;
+                    container.children[day].style.textDecoration = 'line-through';
+                    container.children[day].style.opacity = '0.3';
+                    result.innerHTML = `<p>Can't be ${days[day]} - if we reach ${day > 0 ? days[day-1] : 'Sunday'} night, it wouldn't be a surprise!</p>`;
+                }
+                if (hangStep === 5) {
+                    result.innerHTML += '<p style="color: var(--accent);">But then... Wednesday morning, they hang him. SURPRISE! The paradox resolved itself!</p>';
+                }
+            }
+            function resetHanging() {
+                hangStep = 0;
+                const container = document.getElementById('hanging-days');
+                for (let i = 0; i < 5; i++) {
+                    container.children[i].style.textDecoration = 'none';
+                    container.children[i].style.opacity = '1';
+                }
+                document.getElementById('hanging-result').innerHTML = '<p>Can Friday be the day? Can Thursday? Keep eliminating...</p>';
+            }
+
+            // Paradox of Choice
+            function updateChoice() {
+                const n = parseInt(document.getElementById('choice-n').value);
+                document.getElementById('choice-val').textContent = n;
+                const interest = Math.min(90, 30 + n * 2);
+                const buy = n > 20 ? 3 : n > 10 ? 10 : 30;
+                const happy = n > 20 ? 'Low' : n > 10 ? 'Medium' : 'High';
+                document.getElementById('choice-interest').textContent = interest + '%';
+                document.getElementById('choice-buy').textContent = buy + '%';
+                document.getElementById('choice-happy').textContent = happy;
+            }
+
+            // Willpower Paradox
+            function setWillpower(type) {
+                if (type === 'resist') {
+                    document.getElementById('will-used').textContent = 'High';
+                    document.getElementById('will-success').textContent = '60%';
+                    document.getElementById('will-result').innerHTML = '<p>Constantly fighting temptation depletes willpower. You often fail.</p>';
+                } else {
+                    document.getElementById('will-used').textContent = 'Low';
+                    document.getElementById('will-success').textContent = '90%';
+                    document.getElementById('will-result').innerHTML = '<p style="color: var(--accent);">No cookies in the house = no willpower needed!</p>';
+                }
+            }
+
+            // Paradox of Hedonism
+            function setHedonism(type) {
+                if (type === 'direct') {
+                    document.getElementById('hed-effort').textContent = '100%';
+                    document.getElementById('hed-happy').textContent = '😔 30%';
+                    document.getElementById('hed-result').innerHTML = '<p>Chasing happiness directly often leads to disappointment and hedonic treadmill.</p>';
+                } else {
+                    document.getElementById('hed-effort').textContent = '70%';
+                    document.getElementById('hed-happy').textContent = '😊 80%';
+                    document.getElementById('hed-result').innerHTML = '<p style="color: var(--accent);">Pursuing meaning, relationships, and growth - happiness follows as a byproduct!</p>';
+                }
+            }
+
+            // Dating App Paradox
+            function updateDating() {
+                const n = parseInt(document.getElementById('date-n').value);
+                document.getElementById('date-val').textContent = n;
+                const commit = n > 500 ? 'Very Low' : n > 100 ? 'Low' : n > 20 ? 'Medium' : 'High';
+                const satisfy = n > 500 ? 'Very Low' : n > 100 ? 'Low' : n > 20 ? 'Medium' : 'High';
+                document.getElementById('date-commit').textContent = commit;
+                document.getElementById('date-satisfy').textContent = satisfy;
+                document.getElementById('date-result').innerHTML = n > 100 ?
+                    '<p style="color: #ef4444;">Too many options! Always wondering if someone better is a swipe away...</p>' :
+                    '<p>Manageable pool leads to genuine connection.</p>';
+            }
+
+            // Violence Paradox
+            function updateViolence() {
+                const era = document.getElementById('violence-era').value;
+                const data = {
+                    tribal: { rate: '15%', feel: 'Normal' },
+                    medieval: { rate: '3%', feel: 'Normal' },
+                    1900: { rate: '1.5%', feel: 'Concerning' },
+                    now: { rate: '0.7%', feel: 'High (news!)' }
+                };
+                const d = data[era];
+                document.getElementById('viol-rate').textContent = d.rate;
+                document.getElementById('viol-feel').textContent = d.feel;
+            }
+
+            // Sorites Paradox
+            function updateSorites() {
+                const n = parseInt(document.getElementById('sorites-n').value);
+                document.getElementById('sorites-val').textContent = n;
+                document.getElementById('sorites-grains').textContent = n;
+                let status, result;
+                if (n >= 500) {
+                    status = '🏔️ Heap';
+                    result = '<p>Clearly a heap with ' + n + ' grains.</p>';
+                } else if (n >= 100) {
+                    status = '🤔 Heap?';
+                    result = '<p>Getting smaller... but still probably a heap?</p>';
+                } else if (n >= 20) {
+                    status = '❓ Pile?';
+                    result = '<p style="color: var(--accent);">Is this a heap or just a pile?</p>';
+                } else if (n >= 5) {
+                    status = '🤷 Few grains';
+                    result = '<p style="color: var(--accent);">Surely not a heap anymore... but when did it stop?</p>';
+                } else {
+                    status = '❌ Not a heap';
+                    result = '<p>Definitely not a heap. But which removal made the difference?</p>';
+                }
+                document.getElementById('sorites-status').textContent = status;
+                document.getElementById('sorites-result').innerHTML = result;
+            }
+
+            // Dome Paradox
+            let domeAnimating = false;
+            function drawDome(ballX) {
+                const canvas = document.getElementById('dome-canvas');
+                const ctx = canvas.getContext('2d');
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                // Draw dome
+                ctx.strokeStyle = '#6366f1';
+                ctx.lineWidth = 3;
+                ctx.beginPath();
+                ctx.moveTo(50, 180);
+                ctx.quadraticCurveTo(150, 30, 250, 180);
+                ctx.stroke();
+                // Draw ball
+                const ballY = 50 + (ballX - 150) * (ballX - 150) / 200;
+                ctx.fillStyle = '#f59e0b';
+                ctx.beginPath();
+                ctx.arc(ballX, ballY, 12, 0, Math.PI * 2);
+                ctx.fill();
+            }
+            function startDome() {
+                if (domeAnimating) return;
+                domeAnimating = true;
+                document.getElementById('dome-result').innerHTML = '<p>Waiting... at any moment T ≥ 0, the ball may spontaneously move...</p>';
+                let wait = Math.random() * 3000 + 1000;
+                setTimeout(() => {
+                    let ballX = 150;
+                    function animate() {
+                        if (ballX < 250) {
+                            ballX += 2;
+                            drawDome(ballX);
+                            requestAnimationFrame(animate);
+                        } else {
+                            domeAnimating = false;
+                            document.getElementById('dome-result').innerHTML = '<p style="color: var(--accent);">The ball moved! But nothing caused it - this is allowed by Newton\'s equations!</p>';
+                        }
+                    }
+                    animate();
+                }, wait);
+            }
+            function resetDome() {
+                domeAnimating = false;
+                drawDome(150);
+                document.getElementById('dome-result').innerHTML = '<p>The ball is perfectly balanced at the apex...</p>';
+            }
+            // Initialize dome
+            setTimeout(() => drawDome(150), 100);
+
+            // Bootstrap Paradox
+            function runBootstrap() {
+                const steps = ['boot-you', 'boot-past', 'boot-future'];
+                let i = 0;
+                function highlight() {
+                    steps.forEach(s => document.getElementById(s).style.background = s === 'boot-you' ? 'var(--primary)' : 'var(--card)');
+                    if (i < steps.length) {
+                        document.getElementById(steps[i]).style.background = 'var(--accent)';
+                        i++;
+                        setTimeout(highlight, 800);
+                    } else {
+                        document.getElementById('boot-result').innerHTML = '<p style="color: var(--accent);">The symphony has no origin! It exists only in the loop. Who composed it? Nobody - and everybody.</p>';
+                        // Loop back
+                        setTimeout(() => {
+                            steps.forEach(s => document.getElementById(s).style.background = s === 'boot-you' ? 'var(--primary)' : 'var(--card)');
+                        }, 2000);
+                    }
+                }
+                highlight();
+            }
+
+            // Bonini's Paradox
+            function updateBonini() {
+                const n = parseInt(document.getElementById('bonini-n').value);
+                document.getElementById('bonini-val').textContent = n + '%';
+                let accuracy, understand, result;
+                if (n < 30) {
+                    accuracy = 'Low'; understand = 'High';
+                    result = '<p>Simple model: easy to understand but misses important details.</p>';
+                } else if (n < 70) {
+                    accuracy = 'Medium'; understand = 'Medium';
+                    result = '<p>Balanced model: useful approximation with manageable complexity.</p>';
+                } else if (n < 90) {
+                    accuracy = 'High'; understand = 'Low';
+                    result = '<p style="color: var(--accent);">Complex model: accurate but hard to interpret or debug.</p>';
+                } else {
+                    accuracy = 'Perfect'; understand = 'None';
+                    result = '<p style="color: #ef4444;">Perfect model: as complex as reality itself - useless for understanding!</p>';
+                }
+                document.getElementById('bonini-accuracy').textContent = accuracy;
+                document.getElementById('bonini-understand').textContent = understand;
+                document.getElementById('bonini-result').innerHTML = result;
+            }
+
+            // Polanyi's Paradox
+            function setPolanyi(skill) {
+                const data = {
+                    bike: { human: 'Easy', explain: 'Very Hard', automate: 'Very Hard', text: 'You can ride a bike, but can you explain the micro-adjustments for balance? This tacit knowledge took evolution millions of years to develop.' },
+                    face: { human: 'Instant', explain: 'Impossible', automate: 'Hard (until DL)', text: 'You recognize thousands of faces effortlessly but cannot articulate how. Deep learning finally cracked this by learning implicitly, like humans.' },
+                    chess: { human: 'Hard', explain: 'Possible', automate: 'Easy', text: 'Chess has explicit rules. We can explain strategy. Computers mastered it in the 1990s because the knowledge is formalizable.' }
+                };
+                const d = data[skill];
+                document.getElementById('pol-human').textContent = d.human;
+                document.getElementById('pol-explain').textContent = d.explain;
+                document.getElementById('pol-automate').textContent = d.automate;
+                document.getElementById('pol-result').innerHTML = '<p>' + d.text + '</p>';
+            }
+
+            // Grelling-Nelson Paradox
+            function classifyWord(word) {
+                document.getElementById('grell-word').textContent = word;
+                if (word === 'short') {
+                    document.getElementById('grell-type').textContent = 'Autological ✓';
+                    document.getElementById('grell-result').innerHTML = '<p>"Short" is a short word - it describes itself!</p>';
+                } else if (word === 'long') {
+                    document.getElementById('grell-type').textContent = 'Heterological';
+                    document.getElementById('grell-result').innerHTML = '<p>"Long" is not a long word - it doesn\'t describe itself.</p>';
+                } else if (word === 'english') {
+                    document.getElementById('grell-type').textContent = 'Autological ✓';
+                    document.getElementById('grell-result').innerHTML = '<p>"English" is an English word - it describes itself!</p>';
+                } else {
+                    document.getElementById('grell-type').textContent = '⚠️ PARADOX';
+                    document.getElementById('grell-result').innerHTML = '<p style="color: var(--accent);">If "heterological" IS heterological, then it describes itself, so it\'s autological.<br>If it\'s NOT heterological, then it doesn\'t describe itself, so it IS heterological.<br><strong>Contradiction!</strong></p>';
+                }
+            }
+
+            // Curry's Paradox
+            function runCurry(claim) {
+                const claims = { santa: 'Santa Claus exists', unicorn: 'Unicorns are real', anything: 'literally anything you want' };
+                const c = claims[claim];
+                document.getElementById('curry-result').innerHTML = `
+                    <p>Let S = "If S is true, then <strong>${c}</strong>"</p>
+                    <p>Step 1: Assume S is true</p>
+                    <p>Step 2: Then by S's definition, ${c}</p>
+                    <p>Step 3: We've proven "If S is true, then ${c}"</p>
+                    <p>Step 4: But that's exactly what S says! So S is true.</p>
+                    <p style="color: var(--accent);">Step 5: Therefore <strong>${c}</strong>! 🤯</p>
+                `;
+            }
+
+            // Berry Paradox
+            function updateBerry() {
+                const n = parseInt(document.getElementById('berry-n').value);
+                document.getElementById('berry-val').textContent = n;
+                const phrase = `the smallest integer not definable in under ${n} letters`;
+                const len = phrase.replace(/\s/g, '').length;
+                document.getElementById('berry-phrase').textContent = len;
+                if (len < n) {
+                    document.getElementById('berry-status').textContent = '⚠️ Paradox!';
+                    document.getElementById('berry-result').innerHTML = `<p style="color: var(--accent);">The phrase "${phrase}" has only ${len} letters but defines a number that supposedly can't be defined in under ${n} letters!</p>`;
+                } else {
+                    document.getElementById('berry-status').textContent = '✓ No paradox';
+                    document.getElementById('berry-result').innerHTML = `<p>The phrase has ${len} letters, which is ≥ ${n}, so no paradox occurs at this threshold.</p>`;
+                }
+            }
+
+            // Allais Paradox
+            let allaisChoices = { c1: null, c2: null };
+            function setAllais(choice, option) {
+                if (choice === 1) {
+                    allaisChoices.c1 = option;
+                    document.getElementById('allais-c1').textContent = option;
+                } else {
+                    allaisChoices.c2 = option;
+                    document.getElementById('allais-c2').textContent = option;
+                }
+                if (allaisChoices.c1 && allaisChoices.c2) {
+                    if (allaisChoices.c1 === 'A' && allaisChoices.c2 === 'D') {
+                        document.getElementById('allais-result').innerHTML = '<p style="color: var(--accent);">You chose A and D - the most common pattern! But this violates expected utility theory. The certainty of A shouldn\'t change your risk preference in Choice 2.</p>';
+                    } else if (allaisChoices.c1 === 'A' && allaisChoices.c2 === 'C') {
+                        document.getElementById('allais-result').innerHTML = '<p style="color: var(--primary);">Consistent risk-averse choices. You value certainty highly throughout.</p>';
+                    } else if (allaisChoices.c1 === 'B' && allaisChoices.c2 === 'D') {
+                        document.getElementById('allais-result').innerHTML = '<p style="color: var(--primary);">Consistent risk-seeking choices. You go for higher expected value.</p>';
+                    } else {
+                        document.getElementById('allais-result').innerHTML = '<p>Interesting choice combination! This is less common.</p>';
+                    }
+                }
+            }
+
+            // Inventor's Paradox
+            function setInventor(type) {
+                if (type === 'specific') {
+                    document.getElementById('inv-scope').textContent = 'Narrow';
+                    document.getElementById('inv-ease').textContent = 'Hard';
+                    document.getElementById('inv-insight').textContent = 'Limited';
+                    document.getElementById('inv-result').innerHTML = '<p>Specific problem: "Find the sum 1+2+...+100"<br>Approach: Add each number one by one.<br>Result: Tedious, error-prone, no generalizable insight.</p>';
+                } else {
+                    document.getElementById('inv-scope').textContent = 'Broad';
+                    document.getElementById('inv-ease').textContent = 'Easier!';
+                    document.getElementById('inv-insight').textContent = 'Deep';
+                    document.getElementById('inv-result').innerHTML = '<p style="color: var(--accent);">General problem: "Find the sum 1+2+...+n"<br>Approach: Pair first and last: (1+n) + (2+n-1) + ... = n(n+1)/2<br>Result: Elegant formula works for ANY n!</p>';
+                }
+            }
+
+            // Drinker Paradox
+            function setDrinker(scenario) {
+                const scenes = {
+                    all: { emoji: '🍺🍺🍺🍺', person: 'Anyone!', text: 'If everyone is drinking, pick anyone. "If they drink, everyone drinks" is trivially true.' },
+                    some: { emoji: '🍺🚫🍺🚫', person: 'Non-drinker', text: 'Pick someone NOT drinking. "If they drink (false), everyone drinks" is vacuously true! False implies anything.' },
+                    none: { emoji: '🚫🚫🚫🚫', person: 'Anyone!', text: 'Pick anyone. "If they drink (false), everyone drinks" is vacuously true for everyone.' },
+                    empty: { emoji: '🏚️', person: 'Vacuously', text: 'Empty pub: the statement is vacuously true because there\'s no counterexample possible!' }
+                };
+                const s = scenes[scenario];
+                document.getElementById('drink-scene').textContent = s.emoji;
+                document.getElementById('drink-person').textContent = s.person;
+                document.getElementById('drink-result').innerHTML = '<p>' + s.text + '</p>';
+            }
+
+            // Commuting Paradox
+            function updateCommute() {
+                const n = parseInt(document.getElementById('commute-n').value);
+                document.getElementById('commute-val').textContent = n;
+                const yearHrs = Math.round(n * 2 * 260 / 60);
+                const salary = n > 60 ? '+$15K' : n > 30 ? '+$8K' : n > 0 ? '+$3K' : '$0';
+                let happy;
+                if (n === 0) happy = '😊 Great';
+                else if (n <= 20) happy = '🙂 Good';
+                else if (n <= 40) happy = '😐 Okay';
+                else if (n <= 60) happy = '😕 Lower';
+                else happy = '😩 Poor';
+                document.getElementById('comm-year').textContent = yearHrs + ' hrs';
+                document.getElementById('comm-salary').textContent = salary;
+                document.getElementById('comm-happy').textContent = happy;
+                document.getElementById('commute-result').innerHTML = n > 45 ?
+                    '<p style="color: #ef4444;">Long commutes are linked to higher divorce rates, obesity, and depression. The salary rarely compensates.</p>' :
+                    '<p>Research shows commuting is the activity that makes people least happy.</p>';
+            }
+
+            // Free-Time Paradox
+            function setFreeTime(level) {
+                const data = {
+                    low: { actual: '38 hrs/week', feel: 'Very Busy', text: 'Low-income workers often have multiple jobs or unpredictable schedules. Despite "more" free hours, they feel constantly rushed and stressed.' },
+                    mid: { actual: '35 hrs/week', feel: 'Busy', text: 'Middle class juggles work, family, and aspirational activities. Free time becomes another thing to optimize.' },
+                    high: { actual: '30 hrs/week', feel: 'Moderate', text: 'High earners work longer but report less time pressure. Why? Status. "Being busy" is a choice that signals importance.' }
+                };
+                const d = data[level];
+                document.getElementById('ft-actual').textContent = d.actual;
+                document.getElementById('ft-feel').textContent = d.feel;
+                document.getElementById('ft-result').innerHTML = '<p>' + d.text + '</p>';
+            }
+
+            // Eligible Bachelor Paradox
+            function runBachelor() {
+                const pool = document.getElementById('bach-pool');
+                const taken = document.getElementById('bach-taken');
+                pool.textContent = '👤👤👤👤👤👤👤👤';
+                taken.textContent = '';
+                let remaining = 8;
+                const interval = setInterval(() => {
+                    if (remaining > 2) {
+                        remaining -= 2;
+                        pool.textContent = '👤'.repeat(remaining);
+                        taken.textContent += '💑';
+                    } else {
+                        clearInterval(interval);
+                        pool.textContent = '👤👤';
+                        document.getElementById('bach-result').innerHTML = '<p style="color: var(--accent);">The best matches paired quickly. What remains in the pool are the harder-to-match individuals. It\'s not you - it\'s mathematics!</p>';
+                    }
+                }, 600);
+            }
+
+            // Deming Paradox
+            function updateDeming() {
+                const n = parseInt(document.getElementById('deming-n').value);
+                document.getElementById('deming-val').textContent = n + '%';
+                let eff, pleasant, result;
+                if (n < 30) {
+                    eff = 'Low'; pleasant = 'High';
+                    result = '<p>Relaxed culture: pleasant to work but may lack competitive edge.</p>';
+                } else if (n < 60) {
+                    eff = 'Medium'; pleasant = 'Medium';
+                    result = '<p>Balanced approach: reasonable efficiency with acceptable culture.</p>';
+                } else if (n < 85) {
+                    eff = 'High'; pleasant = 'Low';
+                    result = '<p style="color: var(--accent);">High-performance culture: great results but high turnover and burnout risk.</p>';
+                } else {
+                    eff = 'Very High'; pleasant = 'Very Low';
+                    result = '<p style="color: #ef4444;">Extreme rigor: ruthlessly efficient but often described as "brutal" or "cult-like."</p>';
+                }
+                document.getElementById('dem-efficiency').textContent = eff;
+                document.getElementById('dem-pleasant').textContent = pleasant;
+                document.getElementById('deming-result').innerHTML = result;
+            }
+
+            // Karl Popper Paradox
+            function setPopper(choice) {
+                if (choice === 'tolerate') {
+                    document.getElementById('pop-action').textContent = 'Allow all';
+                    document.getElementById('pop-outcome').textContent = '❌ Loss';
+                    document.getElementById('popper-result').innerHTML = '<p style="color: #ef4444;">If we extend unlimited tolerance to those who are intolerant, they will eventually destroy tolerance. The tolerant will be dominated by the intolerant.</p>';
+                } else {
+                    document.getElementById('pop-action').textContent = 'Set limits';
+                    document.getElementById('pop-outcome').textContent = '✓ Preserved';
+                    document.getElementById('popper-result').innerHTML = '<p style="color: var(--accent);">A tolerant society must be intolerant of intolerance - not through suppression of speech, but by refusing to engage with intolerant arguments in good faith.</p>';
+                }
+            }
+
+            // Clothesline Paradox
+            function setClothesline(method) {
+                if (method === 'dryer') {
+                    document.getElementById('cloth-energy').textContent = '3 kWh';
+                    document.getElementById('cloth-gdp').textContent = '+$0.40';
+                    document.getElementById('cloth-env').textContent = '🏭 CO2';
+                    document.getElementById('clothesline-result').innerHTML = '<p>Using electricity adds to GDP! The economy "grows" from this consumption.</p>';
+                } else {
+                    document.getElementById('cloth-energy').textContent = '0 kWh';
+                    document.getElementById('cloth-gdp').textContent = '$0';
+                    document.getElementById('cloth-env').textContent = '🌱 Clean';
+                    document.getElementById('clothesline-result').innerHTML = '<p style="color: var(--accent);">Zero energy, zero GDP contribution. Economists see this as "non-productive" activity despite being better for everyone!</p>';
+                }
+            }
+
+            // Obesity-Hunger Paradox
+            function updateFood() {
+                const n = parseInt(document.getElementById('food-n').value);
+                document.getElementById('food-val').textContent = n;
+                let cal, nut, health, result;
+                if (n < 5) {
+                    cal = 'Variable'; nut = 'Very Low'; health = 'Poor';
+                    result = '<p style="color: #ef4444;">Food insecurity forces calorie maximization. Fast food and processed foods are cheapest per calorie.</p>';
+                } else if (n < 10) {
+                    cal = 'High'; nut = 'Low'; health = 'Fair';
+                    result = '<p style="color: var(--accent);">Can afford calories but not nutrition. The "food desert" problem: cheap food is unhealthy.</p>';
+                } else if (n < 20) {
+                    cal = 'Adequate'; nut = 'Medium'; health = 'Good';
+                    result = '<p>Budget allows for some fresh food and variety.</p>';
+                } else {
+                    cal = 'Abundant'; nut = 'High'; health = 'Excellent';
+                    result = '<p>Full access to nutritious foods, organic options, and variety.</p>';
+                }
+                document.getElementById('food-cal').textContent = cal;
+                document.getElementById('food-nut').textContent = nut;
+                document.getElementById('food-health').textContent = health;
+                document.getElementById('food-result').innerHTML = result;
+            }
+
+            // Low Birth-Weight Paradox
+            function setBirthWeight(type) {
+                document.getElementById('bw-weight').textContent = 'Low';
+                if (type === 'smoker') {
+                    document.getElementById('bw-survival').textContent = '95%';
+                    document.getElementById('bw-result').innerHTML = '<p style="color: var(--accent);">Paradoxically higher survival! Why? Smoking CAUSES low birth weight, but the babies are otherwise healthy. It\'s a "known cause."</p>';
+                } else {
+                    document.getElementById('bw-survival').textContent = '88%';
+                    document.getElementById('bw-result').innerHTML = '<p>Lower survival among non-smoker low-weight babies because their low weight is caused by something MORE serious - genetic issues, placental problems, etc.</p>';
+                }
+            }
+
+            // Full-Fat Paradox
+            function setDairy(type) {
+                if (type === 'lowfat') {
+                    document.getElementById('dairy-fat').textContent = 'Low';
+                    document.getElementById('dairy-diabetes').textContent = 'Higher';
+                    document.getElementById('dairy-satiety').textContent = 'Lower';
+                    document.getElementById('dairy-result').innerHTML = '<p>Low-fat dairy removes fat but often adds sugar. You eat more because you\'re less satisfied, and the sugar spikes insulin.</p>';
+                } else {
+                    document.getElementById('dairy-fat').textContent = 'High';
+                    document.getElementById('dairy-diabetes').textContent = 'Lower!';
+                    document.getElementById('dairy-satiety').textContent = 'Higher';
+                    document.getElementById('dairy-result').innerHTML = '<p style="color: var(--accent);">Full-fat dairy provides better satiety, no added sugar, and fat-soluble vitamins. The 50-year "fat is bad" orthodoxy is being reconsidered.</p>';
+                }
+            }
+
+            // Elephant Brain Paradox
+            function setBrain(species) {
+                if (species === 'human') {
+                    document.getElementById('brain-neurons').textContent = '86B';
+                    document.getElementById('brain-cortex').textContent = '16B';
+                    document.getElementById('brain-iq').textContent = 'Highest';
+                    document.getElementById('brain-result').innerHTML = '<p style="color: var(--primary);">Human brains pack 16 billion neurons into the cerebral cortex - the thinking part. This density enables abstract reasoning, language, and technology.</p>';
+                } else {
+                    document.getElementById('brain-neurons').textContent = '257B';
+                    document.getElementById('brain-cortex').textContent = '5.6B';
+                    document.getElementById('brain-iq').textContent = 'High but...';
+                    document.getElementById('brain-result').innerHTML = '<p style="color: var(--accent);">Elephants have 3x more total neurons but only 1/3 the cortical neurons of humans. Most neurons are in the cerebellum for motor control of their trunk (40,000+ muscles!).</p>';
+                }
+            }
         </script>
 
         <!-- All Paradoxes By Points View -->
