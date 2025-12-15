@@ -1875,10 +1875,30 @@
                 <style>
                     .moravec-row {
                         display: grid;
-                        grid-template-columns: 200px 1fr;
-                        gap: 1rem;
+                        grid-template-columns: 140px 1fr;
+                        gap: 0.5rem;
                         align-items: center;
                         padding: 0.5rem;
+                    }
+                    @media (max-width: 768px) {
+                        .moravec-row {
+                            grid-template-columns: 1fr;
+                            gap: 0.25rem;
+                        }
+                        .moravec-label {
+                            font-weight: bold;
+                            font-size: 0.8rem;
+                            color: var(--accent);
+                        }
+                        .moravec-bars {
+                            margin-bottom: 0.5rem;
+                        }
+                        .moravec-human, .moravec-ai {
+                            font-size: 0.7rem;
+                            padding: 0.3rem 0.5rem;
+                        }
+                    }
+                    .moravec-row {
                         background: var(--bg);
                         border-radius: 0.25rem;
                     }
