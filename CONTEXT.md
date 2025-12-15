@@ -1,7 +1,7 @@
 # Paradox Simulators Project
 
 ## Overview
-An interactive single-page HTML application featuring 104 paradoxes sourced from Hacker News, each with interactive simulators to explore and understand the concepts.
+An interactive single-page HTML application featuring 105 paradoxes sourced from Hacker News, each with interactive simulators to explore and understand the concepts.
 
 ## Data Source
 - Paradoxes fetched from HN Algolia API (`https://hn.algolia.com/api/v1/search?query=paradox&tags=story`)
@@ -29,7 +29,7 @@ An interactive single-page HTML application featuring 104 paradoxes sourced from
 - Click any item to jump to its simulator
 - Displays total paradox count (104 Paradoxes)
 
-### Interactive Simulators (104 total)
+### Interactive Simulators (105 total)
 Each paradox card includes:
 - Title with HN points badge
 - Description
@@ -91,6 +91,7 @@ Each paradox card includes:
 - **Static Site Paradox** - Complexity comparison
 - **Captcha Paradox** - AI training feedback loop
 - **AI Deskilling** - Automation dependency explorer
+- **Vibe Coding Paradox** - AI amplification of care vs dysfunction
 
 ### Psychology & Social
 - **Violence Paradox** - Historical violence rates
@@ -131,4 +132,7 @@ Each paradox card includes:
    - Chunk 4 (More Logic): Sorites, Dome, Bootstrap, Bonini's, Polanyi's, Grelling-Nelson, Curry's, Berry, Allais, Inventor's, Drinker (11 simulators)
    - Chunk 5 (More Economics): Commuting, Free-Time, Eligible Bachelor, Deming, Karl Popper, Clothesline, Obesity-Hunger, Low Birth-Weight, Full-Fat, Elephant Brain (10 simulators)
 
-**Total: 104 interactive paradox simulators**
+9. Added Vibe Coding Paradox (AI amplifies both excellence and dysfunction)
+10. Fixed mobile responsive CSS for better usability on phones/tablets
+
+**Total: 105 interactive paradox simulators**

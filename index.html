@@ -306,25 +306,192 @@
         }
 
         @media (max-width: 768px) {
+            header {
+                padding: 1.5rem 1rem;
+            }
+
             header h1 {
-                font-size: 1.75rem;
+                font-size: 1.5rem;
+            }
+
+            header p {
+                font-size: 0.875rem;
             }
 
             nav {
                 padding: 0.5rem;
+                gap: 0.25rem;
             }
 
             nav a {
-                font-size: 0.75rem;
-                padding: 0.375rem 0.75rem;
+                font-size: 0.7rem;
+                padding: 0.3rem 0.6rem;
             }
 
             main {
+                padding: 0.75rem;
+            }
+
+            .category-title {
+                font-size: 1.25rem;
+            }
+
+            .paradox-card {
                 padding: 1rem;
+                margin-bottom: 1.25rem;
+            }
+
+            .paradox-card h3 {
+                font-size: 1rem;
+                flex-wrap: wrap;
+            }
+
+            .paradox-card .description {
+                font-size: 0.875rem;
+            }
+
+            .simulator {
+                padding: 1rem;
+            }
+
+            .simulator h4 {
+                font-size: 0.95rem;
             }
 
             .controls {
                 flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            .controls button {
+                width: 100%;
+                padding: 0.875rem 1rem;
+                font-size: 0.9rem;
+            }
+
+            .control-group {
+                width: 100%;
+            }
+
+            input[type="range"] {
+                width: 100%;
+            }
+
+            input[type="number"] {
+                width: 100%;
+                padding: 0.75rem;
+                font-size: 1rem;
+            }
+
+            select {
+                width: 100%;
+                padding: 0.75rem;
+                font-size: 1rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.5rem;
+            }
+
+            .stat-box {
+                padding: 0.75rem 0.5rem;
+            }
+
+            .stat-value {
+                font-size: 1.1rem;
+            }
+
+            .stat-label {
+                font-size: 0.7rem;
+            }
+
+            .result {
+                padding: 0.75rem;
+                font-size: 0.875rem;
+            }
+
+            .result-value {
+                font-size: 1.5rem;
+            }
+
+            .insight {
+                padding: 0.75rem;
+                font-size: 0.8rem;
+            }
+
+            .network-container {
+                height: 200px;
+            }
+
+            .bar-chart {
+                height: 150px;
+                padding: 0.5rem;
+            }
+
+            canvas {
+                max-width: 100%;
+                height: auto !important;
+            }
+
+            .sort-controls {
+                flex-wrap: wrap;
+                padding: 0.75rem;
+                gap: 0.5rem;
+            }
+
+            .sort-controls button {
+                padding: 0.5rem 0.75rem;
+                font-size: 0.75rem;
+            }
+
+            .sort-controls select {
+                padding: 0.4rem 0.6rem;
+                font-size: 0.8rem;
+            }
+
+            /* Fix inline flex containers on mobile */
+            [style*="display: flex"][style*="gap"] {
+                flex-wrap: wrap !important;
+            }
+
+            /* Door/box game buttons */
+            .controls > div[style*="display: flex"] {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+
+        /* Extra small screens */
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.25rem;
+            }
+
+            nav a {
+                font-size: 0.65rem;
+                padding: 0.25rem 0.5rem;
+            }
+
+            .paradox-card h3 {
+                font-size: 0.95rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .stat-value {
+                font-size: 1rem;
+            }
+
+            .stat-label {
+                font-size: 0.65rem;
+            }
+
+            .controls button {
+                font-size: 0.85rem;
+                padding: 0.75rem;
             }
         }
 
@@ -8906,9 +9073,46 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Vibe Coding Paradox -->
+            <div class="paradox-card">
+                <h3>Vibe Coding Paradox <span class="points">NEW</span></h3>
+                <p class="description">AI removes friction from coding, but friction was where we decided what mattered. AI amplifies both excellence and dysfunction.</p>
+                <div class="simulator">
+                    <h4>System Ownership Test</h4>
+                    <div class="controls">
+                        <button onclick="setVibeCoding('owned')">Your Own System</button>
+                        <button onclick="setVibeCoding('inherited')">Inherited Codebase</button>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-box"><div class="stat-value" id="vibe-friction">-</div><div class="stat-label">Friction Removed</div></div>
+                        <div class="stat-box"><div class="stat-value" id="vibe-quality">-</div><div class="stat-label">Code Quality</div></div>
+                        <div class="stat-box"><div class="stat-value" id="vibe-outcome">-</div><div class="stat-label">AI Effect</div></div>
+                    </div>
+                    <div class="result" id="vibe-result">
+                        <p><strong>The Paradox:</strong> A 1,100-line React component needs fixing. Refactor properly = 2 hours. AI patch = 5 minutes. Which do you choose?</p>
+                    </div>
+                    <div class="insight">"Computers are amplifiers." AI doesn't improve broken systems - it scales dysfunction silently with clean, well-formatted code.</div>
+                </div>
+            </div>
         </section>
 
         <script>
+            // Vibe Coding Paradox
+            function setVibeCoding(type) {
+                if (type === 'owned') {
+                    document.getElementById('vibe-friction').textContent = 'High';
+                    document.getElementById('vibe-quality').textContent = 'Improved';
+                    document.getElementById('vibe-outcome').textContent = 'Amplifies Care';
+                    document.getElementById('vibe-result').innerHTML = '<p style="color: var(--primary);"><strong>Your system:</strong> You have intentional constraints and standards. AI-generated code either aligns with them or gets caught immediately. AI amplifies your care and intent.</p>';
+                } else {
+                    document.getElementById('vibe-friction').textContent = 'Very High';
+                    document.getElementById('vibe-quality').textContent = 'Unchanged';
+                    document.getElementById('vibe-outcome').textContent = 'Scales Dysfunction';
+                    document.getElementById('vibe-result').innerHTML = '<p style="color: #ef4444;"><strong>Inherited mess:</strong> AI becomes a shield against cognitive overload. You ship "beautifully formatted, semantically named dysfunction." The cost of caring exceeds the cost of being correct.</p>';
+                }
+            }
+
             // Python Paradox
             function updateLangParadox() {
                 const lang = document.getElementById('lang-choice').value;
