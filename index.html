@@ -631,7 +631,14 @@
                     <h4>Potato Dehydration Simulator</h4>
                     <div class="controls">
                         <div class="control-group">
-                            <label>Initial Weight (lbs)</label>
+                            <label>Unit System</label>
+                            <select id="potato-unit" onchange="calculatePotato()">
+                                <option value="lbs">lbs (Imperial)</option>
+                                <option value="kg">kg (Metric)</option>
+                            </select>
+                        </div>
+                        <div class="control-group">
+                            <label>Initial Weight (<span id="potato-unit-label">lbs</span>)</label>
                             <input type="number" id="potato-weight" value="100" min="1" max="1000" oninput="calculatePotato()">
                         </div>
                         <div class="control-group">
@@ -933,6 +940,10 @@
                 const weight = parseFloat(document.getElementById('potato-weight').value) || 100;
                 const initialWaterPct = parseFloat(document.getElementById('potato-initial').value);
                 const finalWaterPct = parseFloat(document.getElementById('potato-final').value);
+                const unit = document.getElementById('potato-unit').value;
+
+                // Update unit label
+                document.getElementById('potato-unit-label').textContent = unit;
 
                 // Update slider labels
                 document.getElementById('potato-initial-val').textContent = initialWaterPct + '%';
@@ -952,17 +963,17 @@
                 const waterPctChange = finalWaterPct - initialWaterPct;
                 const weightPctChange = ((finalWeight - weight) / weight) * 100;
 
-                // Update text displays
-                document.getElementById('potato-result').textContent = finalWeight.toFixed(2) + ' lbs';
-                document.getElementById('potato-before-weight').textContent = weight.toFixed(0) + ' lbs';
-                document.getElementById('potato-after-weight').textContent = finalWeight.toFixed(2) + ' lbs';
+                // Update text displays with selected unit
+                document.getElementById('potato-result').textContent = finalWeight.toFixed(2) + ' ' + unit;
+                document.getElementById('potato-before-weight').textContent = weight.toFixed(0) + ' ' + unit;
+                document.getElementById('potato-after-weight').textContent = finalWeight.toFixed(2) + ' ' + unit;
 
-                document.getElementById('potato-before-water-amt').textContent = initialWaterWeight.toFixed(1) + ' lbs water';
-                document.getElementById('potato-before-solid-amt').textContent = solidMatter.toFixed(2) + ' lb solid';
-                document.getElementById('potato-after-water-amt').textContent = finalWaterWeight.toFixed(1) + ' lbs water';
-                document.getElementById('potato-after-solid-amt').textContent = solidMatter.toFixed(2) + ' lb solid';
+                document.getElementById('potato-before-water-amt').textContent = initialWaterWeight.toFixed(1) + ' ' + unit + ' water';
+                document.getElementById('potato-before-solid-amt').textContent = solidMatter.toFixed(2) + ' ' + unit + ' solid';
+                document.getElementById('potato-after-water-amt').textContent = finalWaterWeight.toFixed(1) + ' ' + unit + ' water';
+                document.getElementById('potato-after-solid-amt').textContent = solidMatter.toFixed(2) + ' ' + unit + ' solid';
 
-                document.getElementById('potato-water-lost').textContent = '-' + waterLost.toFixed(1) + ' lbs water';
+                document.getElementById('potato-water-lost').textContent = '-' + waterLost.toFixed(1) + ' ' + unit + ' water';
 
                 document.getElementById('potato-water-change').textContent = waterPctChange.toFixed(1) + '%';
                 document.getElementById('potato-weight-change').textContent = weightPctChange.toFixed(1) + '%';
