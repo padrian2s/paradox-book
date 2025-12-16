@@ -855,6 +855,678 @@ export const paradoxes = [
         description: "Elephants have 3x more neurons than humans. Why aren't they smarter? Their neurons are mostly in the cerebellum, not the cortex.",
         category: 'economics',
         simulator: 'elephant-brain-simulator'
+    },
+    {
+        id: 'catch-22',
+        title: 'Catch-22',
+        points: 85,
+        description: 'A soldier who wants to be declared insane to avoid combat is deemed not insane for that very reason. You need something that can only be had by not needing it.',
+        category: 'logic',
+        simulator: 'catch22-simulator'
+    },
+    {
+        id: 'barber',
+        title: 'Barber Paradox',
+        points: 72,
+        description: 'A barber shaves all and only those men who do not shave themselves. Does he shave himself? If yes, then no. If no, then yes.',
+        category: 'logic',
+        simulator: 'barber-simulator'
+    },
+    {
+        id: 'crocodile',
+        title: 'Crocodile Dilemma',
+        points: 45,
+        description: 'A crocodile steals a child and promises to return it if the father correctly guesses what the crocodile will do. The father guesses "You will not return my child."',
+        category: 'logic',
+        simulator: 'crocodile-simulator'
+    },
+    {
+        id: 'court',
+        title: 'Paradox of the Court',
+        points: 38,
+        description: 'A law student agrees to pay his teacher after winning his first case. The teacher sues - if the student wins, he must pay. If he loses, he still must pay!',
+        category: 'logic',
+        simulator: 'court-simulator'
+    },
+    {
+        id: 'epimenides',
+        title: 'Epimenides Paradox',
+        points: 52,
+        description: 'A Cretan says: "All Cretans are liars." If true, then the Cretan is lying, so it\'s false. If false, then some Cretans tell truth, which is consistent.',
+        category: 'logic',
+        simulator: 'epimenides-simulator'
+    },
+    {
+        id: 'card',
+        title: 'Card Paradox',
+        points: 28,
+        description: '"The next statement is true. The previous statement is false." Neither sentence is self-referential, yet together they create a paradox.',
+        category: 'logic',
+        simulator: 'card-simulator'
+    },
+    {
+        id: 'pinocchio',
+        title: 'Pinocchio Paradox',
+        points: 65,
+        description: 'What happens if Pinocchio says "My nose grows now"? If true, his nose shouldn\'t grow. If false, it should grow, making it true!',
+        category: 'logic',
+        simulator: 'pinocchio-simulator'
+    },
+    {
+        id: 'quine',
+        title: "Quine's Paradox",
+        points: 41,
+        description: '"Yields a falsehood when appended to its own quotation" yields a falsehood when appended to its own quotation. Paradoxical without self-reference!',
+        category: 'logic',
+        simulator: 'quine-simulator'
+    },
+    {
+        id: 'opposite-day',
+        title: 'Opposite Day',
+        points: 33,
+        description: '"It is opposite day today." If true, then it\'s NOT opposite day. But if it\'s NOT opposite day, the statement could be true!',
+        category: 'logic',
+        simulator: 'opposite-day-simulator'
+    },
+    {
+        id: 'barbershop',
+        title: 'Barbershop Paradox',
+        points: 25,
+        description: 'Lewis Carroll\'s paradox: If one of two simultaneous assumptions leads to a contradiction, the other is also disproved - but this leads to paradox!',
+        category: 'logic',
+        simulator: 'barbershop-simulator'
+    },
+    {
+        id: 'lottery',
+        title: 'Lottery Paradox',
+        points: 42,
+        description: 'It\'s reasonable to believe any single ticket will lose, but unreasonable to believe NO ticket will win. Yet believing each loses implies believing none wins!',
+        category: 'logic',
+        simulator: 'lottery-simulator'
+    },
+    {
+        id: 'tortoise-achilles',
+        title: 'What the Tortoise Said to Achilles',
+        points: 55,
+        description: 'Carroll\'s paradox: If a premise needs justification that it leads to a conclusion, we need infinite premises. Inference rules can\'t themselves be premises.',
+        category: 'logic',
+        simulator: 'tortoise-achilles-simulator'
+    },
+    {
+        id: 'knower',
+        title: 'Knower Paradox',
+        points: 28,
+        description: '"This sentence is not known." If you know it, it\'s false (so you don\'t know it). If you don\'t know it, it might be true - but then is it knowable?',
+        category: 'logic',
+        simulator: 'knower-simulator'
+    },
+    {
+        id: 'no-no',
+        title: 'No-No Paradox',
+        points: 22,
+        description: 'Sentence A: "B is not true." Sentence B: "A is not true." Neither directly self-referential, yet together they\'re paradoxical.',
+        category: 'logic',
+        simulator: 'nono-simulator'
+    },
+    {
+        id: 'yablo',
+        title: 'Yablo\'s Paradox',
+        points: 35,
+        description: 'An infinite sequence where each sentence says "all following sentences are false." No self-reference, yet still paradoxical!',
+        category: 'logic',
+        simulator: 'yablo-simulator'
+    },
+    {
+        id: 'richard',
+        title: 'Richard\'s Paradox',
+        points: 30,
+        description: 'We can define a decimal that differs from every definable decimal - but that definition itself defines it! A paradox of definability.',
+        category: 'logic',
+        simulator: 'richard-simulator'
+    },
+    {
+        id: 'socrates-knowledge',
+        title: 'I Know That I Know Nothing',
+        points: 48,
+        description: 'Socrates\' famous claim: If he knows nothing, how does he know that? But if he knows something (that he knows nothing), then he doesn\'t know nothing!',
+        category: 'philosophy',
+        simulator: 'socrates-simulator'
+    },
+    {
+        id: 'omnipotence',
+        title: 'Omnipotence Paradox',
+        points: 85,
+        description: 'Can God create a stone so heavy even He cannot lift it? Either answer limits omnipotence - a classic theological paradox.',
+        category: 'philosophy',
+        simulator: 'omnipotence-simulator'
+    },
+    {
+        id: 'free-will',
+        title: 'Paradox of Free Will',
+        points: 72,
+        description: 'If God knows in advance what you\'ll decide, how can your choice be free? Divine foreknowledge seems incompatible with libertarian free will.',
+        category: 'philosophy',
+        simulator: 'freewill-simulator'
+    },
+    {
+        id: 'problem-evil',
+        title: 'Problem of Evil',
+        points: 95,
+        description: 'If God is omnipotent, omniscient, and good, why does evil exist? Any two seem compatible, but all three together create the Epicurean paradox.',
+        category: 'philosophy',
+        simulator: 'evil-simulator'
+    },
+    {
+        id: 'preface',
+        title: 'Preface Paradox',
+        points: 32,
+        description: 'An author believes each statement in their book is correct, yet also believes at least one must be wrong. Both beliefs seem rational, yet contradict!',
+        category: 'logic',
+        simulator: 'preface-simulator'
+    },
+    {
+        id: 'moore',
+        title: 'Moore\'s Paradox',
+        points: 38,
+        description: '"It\'s raining, but I don\'t believe it\'s raining." Not a logical contradiction, yet absurd to assert. What makes it paradoxical?',
+        category: 'philosophy',
+        simulator: 'moore-simulator'
+    },
+    {
+        id: 'meno',
+        title: 'Meno\'s Paradox',
+        points: 45,
+        description: 'You can\'t search for what you know (you already have it) or what you don\'t know (you won\'t recognize it). So how is learning possible?',
+        category: 'philosophy',
+        simulator: 'meno-simulator'
+    },
+    {
+        id: 'fitch',
+        title: 'Fitch\'s Paradox',
+        points: 40,
+        description: 'If all truths are knowable, then all truths are known! The modest claim that truths CAN be known implies the radical claim that they ARE known.',
+        category: 'logic',
+        simulator: 'fitch-simulator'
+    },
+    {
+        id: 'goodman-grue',
+        title: 'Goodman\'s Paradox',
+        points: 52,
+        description: 'Define "grue": green if observed before 2100, blue after. All evidence for "emeralds are green" equally supports "emeralds are grue"!',
+        category: 'logic',
+        simulator: 'grue-simulator'
+    },
+    {
+        id: 'burali-forti',
+        title: 'Burali-Forti Paradox',
+        points: 35,
+        description: 'If ordinal numbers formed a set, that set would have an ordinal number - one that is both in the set and greater than all ordinals in it!',
+        category: 'infinity',
+        simulator: 'burali-forti-simulator'
+    },
+    {
+        id: 'cantor',
+        title: 'Cantor\'s Paradox',
+        points: 55,
+        description: 'The set of all sets would contain its own power set. But power sets are always larger than their original sets. Contradiction!',
+        category: 'infinity',
+        simulator: 'cantor-simulator'
+    },
+    {
+        id: 'galileo',
+        title: 'Galileo\'s Paradox',
+        points: 48,
+        description: 'Most integers are NOT perfect squares, yet there are exactly as many perfect squares as integers! Both can be paired one-to-one.',
+        category: 'infinity',
+        simulator: 'galileo-simulator'
+    },
+    {
+        id: 'thomson-lamp',
+        title: 'Thomson\'s Lamp',
+        points: 42,
+        description: 'A lamp is toggled on/off at times 1, 1/2, 1/4, 1/8... After 2 minutes (infinite toggles), is it on or off?',
+        category: 'infinity',
+        simulator: 'thomson-lamp-simulator'
+    },
+    {
+        id: 'grandi-series',
+        title: 'Grandi\'s Series',
+        points: 38,
+        description: 'What is 1 - 1 + 1 - 1 + 1 - 1...? Grouping differently gives 0, 1, or 1/2. All seem valid!',
+        category: 'infinity',
+        simulator: 'grandi-simulator'
+    },
+    {
+        id: 'gabriel-horn',
+        title: 'Gabriel\'s Horn',
+        points: 65,
+        description: 'A trumpet shape with FINITE volume but INFINITE surface area. You can fill it with paint, but never paint its surface!',
+        category: 'infinity',
+        simulator: 'gabriel-horn-simulator'
+    },
+    {
+        id: 'coin-rotation',
+        title: 'Coin Rotation Paradox',
+        points: 32,
+        description: 'Roll a coin around an identical coin. It makes TWO full rotations while traversing ONE circumference. Where does the extra rotation come from?',
+        category: 'mathematical',
+        simulator: 'coin-rotation-simulator'
+    },
+    {
+        id: 'bertrand-box',
+        title: 'Bertrand\'s Box Paradox',
+        points: 45,
+        description: 'Three boxes with 2 coins each: GG, SS, GS. You draw gold. What\'s the probability the other coin is gold? Not 1/2!',
+        category: 'probability',
+        simulator: 'bertrand-box-simulator'
+    },
+    {
+        id: 'bertrand-random',
+        title: 'Bertrand\'s Paradox',
+        points: 55,
+        description: 'What\'s the probability a random chord in a circle is longer than the side of an inscribed triangle? Answer: 1/2, 1/3, or 1/4 depending on how you define "random"!',
+        category: 'probability',
+        simulator: 'bertrand-random-simulator'
+    },
+    {
+        id: 'false-positive',
+        title: 'False Positive Paradox',
+        points: 72,
+        description: 'A 99% accurate test says you have a rare disease. The chance you actually have it? Often less than 50%! Base rates matter.',
+        category: 'probability',
+        simulator: 'false-positive-simulator'
+    },
+    {
+        id: 'intransitive-dice',
+        title: 'Intransitive Dice',
+        points: 58,
+        description: 'Die A usually beats B, B usually beats C, but C usually beats A! Rock-paper-scissors with probability.',
+        category: 'probability',
+        simulator: 'intransitive-dice-simulator'
+    },
+    {
+        id: 'three-prisoners',
+        title: 'Three Prisoners Problem',
+        points: 48,
+        description: 'Of three prisoners, one will be freed. A asks the guard to name another who will die. After learning B will die, should A\'s hopes change?',
+        category: 'probability',
+        simulator: 'three-prisoners-simulator'
+    },
+    {
+        id: 'will-rogers',
+        title: 'Will Rogers Phenomenon',
+        points: 35,
+        description: 'Moving one person from Group A to Group B can raise the average of BOTH groups! How is this possible?',
+        category: 'mathematical',
+        simulator: 'will-rogers-simulator'
+    },
+    {
+        id: 'all-horses',
+        title: 'All Horses Are the Same Color',
+        points: 42,
+        description: 'A flawed induction proof seems to show all horses are the same color. Where exactly does the logic fail?',
+        category: 'mathematical',
+        simulator: 'all-horses-simulator'
+    },
+    {
+        id: 'arrow',
+        title: 'Arrow\'s Impossibility Theorem',
+        points: 88,
+        description: 'No voting system can satisfy all fairness criteria simultaneously. Democracy is mathematically impossible to perfect!',
+        category: 'decisions',
+        simulator: 'arrow-simulator'
+    },
+    {
+        id: 'condorcet',
+        title: 'Condorcet Paradox',
+        points: 62,
+        description: 'Majority prefers A to B, B to C, and C to A! Group preferences can be cyclic even when individual preferences are not.',
+        category: 'decisions',
+        simulator: 'condorcet-simulator'
+    },
+    {
+        id: 'prisoner-dilemma',
+        title: 'Prisoner\'s Dilemma',
+        points: 125,
+        description: 'Two rational prisoners will both confess, even though both staying silent is better for each. Individual rationality produces collective irrationality.',
+        category: 'decisions',
+        simulator: 'prisoner-dilemma-simulator'
+    },
+    {
+        id: 'buridan-ass',
+        title: 'Buridan\'s Ass',
+        points: 52,
+        description: 'A donkey equally hungry and thirsty, placed exactly between food and water, would starve - unable to make a rational choice between equal options.',
+        category: 'decisions',
+        simulator: 'buridan-simulator'
+    },
+    {
+        id: 'paradox-voting',
+        title: 'Paradox of Voting',
+        points: 45,
+        description: 'The cost of voting exceeds any single vote\'s expected impact. Why do rational people vote at all?',
+        category: 'decisions',
+        simulator: 'voting-paradox-simulator'
+    },
+    {
+        id: 'irresistible-force',
+        title: 'Irresistible Force Paradox',
+        points: 70,
+        description: 'What happens when an unstoppable force meets an immovable object?',
+        category: 'physics',
+        simulator: 'irresistible-force-simulator'
+    },
+    {
+        id: 'moving-rows',
+        title: 'Moving Rows Paradox (Zeno)',
+        points: 65,
+        description: 'Zeno\'s paradox about relative motion - time passes twice as fast from one perspective.',
+        category: 'physics',
+        simulator: 'moving-rows-simulator'
+    },
+    {
+        id: 'grain-millet',
+        title: 'Grain of Millet',
+        points: 60,
+        description: 'A single grain makes no sound, yet 10,000 grains make noise - how can many nothings become something?',
+        category: 'physics',
+        simulator: 'grain-millet-simulator'
+    },
+    {
+        id: 'aristotle-wheel',
+        title: 'Aristotle\'s Wheel Paradox',
+        points: 75,
+        description: 'Two concentric circles travel different distances but complete rotation together.',
+        category: 'physics',
+        simulator: 'aristotle-wheel-simulator'
+    },
+    {
+        id: 'feynman-sprinkler',
+        title: 'Feynman Sprinkler',
+        points: 80,
+        description: 'When a sprinkler sucks in water, which direction does it spin?',
+        category: 'physics',
+        simulator: 'feynman-sprinkler-simulator'
+    },
+    {
+        id: 'algol',
+        title: 'Algol Paradox',
+        points: 70,
+        description: 'In binary star systems, the less massive star appears older, contradicting stellar evolution.',
+        category: 'scientific',
+        simulator: 'algol-simulator'
+    },
+    {
+        id: 'gzk',
+        title: 'GZK Paradox',
+        points: 75,
+        description: 'Cosmic rays with energies exceeding theoretical limits have been detected.',
+        category: 'scientific',
+        simulator: 'gzk-simulator'
+    },
+    {
+        id: 'youth-paradox',
+        title: 'Paradox of Youth',
+        points: 70,
+        description: 'Young stars exist near the galactic center where star formation should be impossible.',
+        category: 'scientific',
+        simulator: 'youth-paradox-simulator'
+    },
+    {
+        id: 'dalembert',
+        title: 'D\'Alembert\'s Paradox',
+        points: 75,
+        description: 'Ideal fluids exert no force on objects - contradicting real experience.',
+        category: 'physics',
+        simulator: 'dalembert-simulator'
+    },
+    {
+        id: 'bentley',
+        title: 'Bentley\'s Paradox',
+        points: 70,
+        description: 'In Newtonian gravity, an infinite uniform universe would collapse to a single point.',
+        category: 'scientific',
+        simulator: 'bentley-simulator'
+    },
+    {
+        id: 'diamond-water',
+        title: 'Diamond-Water Paradox',
+        points: 80,
+        description: 'Water is essential but cheap, diamonds are useless but expensive. Why do we value non-essentials more than necessities?',
+        category: 'economics',
+        simulator: 'diamond-water-simulator'
+    },
+    {
+        id: 'giffen',
+        title: 'Giffen Good Paradox',
+        points: 75,
+        description: 'When bread prices rise, poor people buy MORE bread, violating the law of demand. Necessity trumps economics.',
+        category: 'economics',
+        simulator: 'giffen-simulator'
+    },
+    {
+        id: 'easterlin',
+        title: 'Easterlin Paradox',
+        points: 80,
+        description: 'Above basic needs, more money does not increase happiness. Wealth and well-being diverge beyond a threshold.',
+        category: 'economics',
+        simulator: 'easterlin-simulator'
+    },
+    {
+        id: 'leontief',
+        title: 'Leontief Paradox',
+        points: 65,
+        description: 'US exports were more labor-intensive than imports, contradicting comparative advantage theory.',
+        category: 'economics',
+        simulator: 'leontief-simulator'
+    },
+    {
+        id: 'lucas-paradox',
+        title: 'Lucas Paradox',
+        points: 70,
+        description: 'Capital does not flow from rich to poor countries as economic theory predicts. Money stays where money is.',
+        category: 'economics',
+        simulator: 'lucas-paradox-simulator'
+    },
+    {
+        id: 'downs-thomson',
+        title: 'Downs-Thomson Paradox',
+        points: 75,
+        description: 'Building more roads can increase traffic congestion. More capacity invites more drivers until equilibrium.',
+        category: 'social',
+        simulator: 'downs-thomson-simulator'
+    },
+    {
+        id: 'tullock',
+        title: 'Tullock Paradox',
+        points: 70,
+        description: 'Politicians are surprisingly cheap to bribe relative to the value they provide. Why is influence so underpriced?',
+        category: 'social',
+        simulator: 'tullock-simulator'
+    },
+    {
+        id: 'prosperity-paradox',
+        title: 'Prosperity Paradox',
+        points: 70,
+        description: 'Successful generations often raise children who consume rather than create. Abundance breeds complacency.',
+        category: 'social',
+        simulator: 'prosperity-paradox-simulator'
+    },
+    {
+        id: 'demographic-economic',
+        title: 'Demographic-Economic Paradox',
+        points: 75,
+        description: 'Wealthier nations have fewer children despite being able to afford more. Prosperity reduces fertility.',
+        category: 'social',
+        simulator: 'demographic-economic-simulator'
+    },
+    {
+        id: 'mandeville',
+        title: "Mandeville's Paradox",
+        points: 75,
+        description: 'Private vices like greed and vanity can produce public benefits like economic growth. Vice fuels prosperity.',
+        category: 'economics',
+        simulator: 'mandeville-simulator'
+    },
+    {
+        id: 'fiction-paradox',
+        title: 'Paradox of Fiction',
+        points: 75,
+        description: 'We feel real emotions for fictional characters we know don\'t exist.',
+        category: 'philosophy',
+        simulator: 'fiction-paradox-simulator'
+    },
+    {
+        id: 'meat-paradox',
+        title: 'Meat Paradox',
+        points: 70,
+        description: 'People claim to care about animals yet continue eating meat.',
+        category: 'behavior',
+        simulator: 'meat-paradox-simulator'
+    },
+    {
+        id: 'ironic-process',
+        title: 'Ironic Process Theory',
+        points: 75,
+        description: 'Trying NOT to think about something makes you think about it more.',
+        category: 'behavior',
+        simulator: 'ironic-process-simulator'
+    },
+    {
+        id: 'sad-clown',
+        title: 'Sad Clown Paradox',
+        points: 70,
+        description: 'Comedians often suffer from depression despite making others happy.',
+        category: 'behavior',
+        simulator: 'sad-clown-simulator'
+    },
+    {
+        id: 'solomon-paradox',
+        title: 'Solomon\'s Paradox',
+        points: 75,
+        description: 'People give wiser advice to others than they take themselves.',
+        category: 'behavior',
+        simulator: 'solomon-paradox-simulator'
+    },
+    {
+        id: 'hedgehog-dilemma',
+        title: 'Hedgehog\'s Dilemma',
+        points: 70,
+        description: 'The closer we get to others, the more we hurt each other.',
+        category: 'philosophy',
+        simulator: 'hedgehog-dilemma-simulator'
+    },
+    {
+        id: 'analysis-paradox',
+        title: 'Paradox of Analysis',
+        points: 65,
+        description: 'A correct analysis must be identical to what\'s analyzed, making it uninformative.',
+        category: 'philosophy',
+        simulator: 'analysis-paradox-simulator'
+    },
+    {
+        id: 'suspense-paradox',
+        title: 'Paradox of Suspense',
+        points: 70,
+        description: 'We feel suspense watching familiar stories even knowing the outcome.',
+        category: 'behavior',
+        simulator: 'suspense-paradox-simulator'
+    },
+    {
+        id: 'self-absorption',
+        title: 'Self-Absorption Paradox',
+        points: 65,
+        description: 'High self-awareness correlates with both distress AND well-being.',
+        category: 'behavior',
+        simulator: 'self-absorption-simulator'
+    },
+    {
+        id: 'moral-paradox',
+        title: 'Moral Paradox',
+        points: 70,
+        description: 'Different moral imperatives can logically conflict with each other.',
+        category: 'philosophy',
+        simulator: 'moral-paradox-simulator'
+    },
+    {
+        id: 'rule-following',
+        title: 'Rule-Following Paradox',
+        points: 70,
+        description: 'No rule can determine its own application (Wittgenstein)',
+        category: 'philosophy',
+        simulator: 'rule-following-simulator'
+    },
+    {
+        id: 'mere-addition',
+        title: 'Mere Addition Paradox',
+        points: 75,
+        description: 'Adding happy lives can lead to worse outcomes (Parfit)',
+        category: 'philosophy',
+        simulator: 'mere-addition-simulator'
+    },
+    {
+        id: 'nihilism-paradox',
+        title: 'Nihilism Paradox',
+        points: 70,
+        description: 'Claiming nothing has meaning is itself a meaningful claim',
+        category: 'philosophy',
+        simulator: 'nihilism-paradox-simulator'
+    },
+    {
+        id: 'motivation-crowding',
+        title: 'Motivation Crowding',
+        points: 70,
+        description: 'External rewards can reduce intrinsic motivation',
+        category: 'behavior',
+        simulator: 'motivation-crowding-simulator'
+    },
+    {
+        id: 'morton-fork',
+        title: 'Morton\'s Fork',
+        points: 65,
+        description: 'Contradictory observations lead to the same conclusion',
+        category: 'logic',
+        simulator: 'morton-fork-simulator'
+    },
+    {
+        id: 'wollheim',
+        title: 'Wollheim\'s Paradox',
+        points: 65,
+        description: 'A democrat can advocate for policies they personally oppose',
+        category: 'philosophy',
+        simulator: 'wollheim-simulator'
+    },
+    {
+        id: 'proebsting',
+        title: 'Proebsting\'s Paradox',
+        points: 70,
+        description: 'Kelly criterion gambling can still lead to ruin',
+        category: 'probability',
+        simulator: 'proebsting-simulator'
+    },
+    {
+        id: 'chainstore',
+        title: 'Chainstore Paradox',
+        points: 70,
+        description: 'Game theory predicts irrational behavior in chainstore entry game',
+        category: 'economics',
+        simulator: 'chainstore-simulator'
+    },
+    {
+        id: 'antitrust',
+        title: 'Antitrust Paradox',
+        points: 65,
+        description: 'Antitrust enforcement can raise prices it\'s meant to lower',
+        category: 'economics',
+        simulator: 'antitrust-simulator'
+    },
+    {
+        id: 'arrow-info',
+        title: 'Arrow Information Paradox',
+        points: 70,
+        description: 'To sell information, you must reveal it, but then why pay?',
+        category: 'economics',
+        simulator: 'arrow-info-simulator'
     }
 ];
 
