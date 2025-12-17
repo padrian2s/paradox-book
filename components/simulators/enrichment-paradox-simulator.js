@@ -10,6 +10,7 @@ class EnrichmentParadoxSimulator extends SimulatorBase {
         this.biodiversity = 10;
         this.generation = 0;
         this.running = false;
+        this.timeoutId = null;
     }
 
     getTemplate() {
@@ -248,12 +249,12 @@ class EnrichmentParadoxSimulator extends SimulatorBase {
             this.biodiversity = Math.max(1, this.biodiversity - 0.5);
         }
 
-        this.render();
+        this.updateDisplay();
 
-        setTimeout(() => this.runYear(), 200);
+        this.timeoutId = setTimeout(() => this.runYear(), 200);
     }
 
-    render() {
+    updateDisplay() {
         this.$('#algae-val').textContent = Math.round(this.algae);
         this.$('#fish-val').textContent = Math.round(this.fish);
         this.$('#oxygen-val').textContent = Math.round(this.oxygen);
@@ -326,6 +327,10 @@ class EnrichmentParadoxSimulator extends SimulatorBase {
     }
 
     reset() {
+        if (this.timeoutId) {
+            clearTimeout(this.timeoutId);
+            this.timeoutId = null;
+        }
         this.running = false;
         this.algae = 30;
         this.fish = 20;
@@ -340,7 +345,7 @@ class EnrichmentParadoxSimulator extends SimulatorBase {
         const lake = this.$('#lake');
         lake.classList.remove('eutrophic', 'dead');
 
-        this.render();
+        this.updateDisplay();
         this.$('#result-area').innerHTML = '<p>Set nutrient level and run to observe the enrichment paradox.</p>';
     }
 }

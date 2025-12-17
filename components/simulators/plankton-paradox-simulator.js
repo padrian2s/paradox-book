@@ -7,6 +7,7 @@ class PlanktonParadoxSimulator extends SimulatorBase {
         this.resources = { light: 100, nitrogen: 100, phosphorus: 100 };
         this.generation = 0;
         this.running = false;
+        this.timeoutId = null;
     }
 
     getTemplate() {
@@ -253,12 +254,12 @@ class PlanktonParadoxSimulator extends SimulatorBase {
 
         this.species = this.species.filter(sp => sp.population > 0);
 
-        this.render();
+        this.updateDisplay();
 
-        setTimeout(() => this.runGeneration(), 150);
+        this.timeoutId = setTimeout(() => this.runGeneration(), 150);
     }
 
-    render() {
+    updateDisplay() {
         const field = this.$('#plankton-field');
         const legend = this.$('#species-legend');
 
@@ -304,6 +305,10 @@ class PlanktonParadoxSimulator extends SimulatorBase {
     }
 
     reset() {
+        if (this.timeoutId) {
+            clearTimeout(this.timeoutId);
+            this.timeoutId = null;
+        }
         this.running = false;
         this.species = [];
         this.generation = 0;

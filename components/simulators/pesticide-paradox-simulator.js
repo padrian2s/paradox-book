@@ -9,6 +9,7 @@ class PesticideParadoxSimulator extends SimulatorBase {
         this.generation = 0;
         this.running = false;
         this.usePesticide = false;
+        this.timeoutId = null;
     }
 
     getTemplate() {
@@ -266,12 +267,12 @@ class PesticideParadoxSimulator extends SimulatorBase {
         const damage = Math.max(0, (this.pests - 50) / 2);
         this.crops = Math.max(0, this.crops - damage);
 
-        this.render();
+        this.updateDisplay();
 
-        setTimeout(() => this.runGeneration(), 400);
+        this.timeoutId = setTimeout(() => this.runGeneration(), 400);
     }
 
-    render() {
+    updateDisplay() {
         this.$('#pest-count').textContent = this.pests;
         this.$('#predator-count').textContent = this.predators;
         this.$('#crop-count').textContent = Math.round(this.crops);
@@ -323,6 +324,10 @@ class PesticideParadoxSimulator extends SimulatorBase {
     }
 
     reset(clearUI = true) {
+        if (this.timeoutId) {
+            clearTimeout(this.timeoutId);
+            this.timeoutId = null;
+        }
         this.pests = 100;
         this.predators = 30;
         this.crops = 100;
@@ -334,7 +339,7 @@ class PesticideParadoxSimulator extends SimulatorBase {
         }
 
         this.$('#gen-count').textContent = '0';
-        this.render();
+        this.updateDisplay();
 
         if (clearUI) {
             this.$('#result-area').innerHTML = '<p>Select a strategy and run the simulation to see the outcome.</p>';
