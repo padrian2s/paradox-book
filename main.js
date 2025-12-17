@@ -2,7 +2,7 @@
  * Main Application Logic
  * Initializes components, handles navigation, and manages views
  */
-import { paradoxes, categories, getParadoxesByCategory, getParadoxesByPoints } from './data/paradoxes.js';
+import { paradoxes, categories, getParadoxesByCategory, getParadoxesByPoints, getParadoxesBySource } from './data/paradoxes.js';
 
 // Import components
 import './components/paradox-card.js';
@@ -251,6 +251,7 @@ import './components/simulators/zeno-simulator.js';
 class ParadoxApp {
     constructor() {
         this.currentView = 'categories';
+        this.currentSource = 'all';
         this.init();
     }
 
@@ -272,7 +273,7 @@ class ParadoxApp {
     renderCategorySections() {
         const main = document.querySelector('main');
         const sectionsHtml = categories.map(cat => {
-            const categoryParadoxes = getParadoxesByCategory(cat.id);
+            const categoryParadoxes = getParadoxesByCategory(cat.id, this.currentSource);
             if (categoryParadoxes.length === 0) return '';
             return `
                 <section id="${cat.id}" class="category-section">
@@ -326,15 +327,39 @@ class ParadoxApp {
     updateParadoxCount() {
         const countEl = document.getElementById('paradox-count');
         if (countEl) {
-            countEl.textContent = `${paradoxes.length} Paradoxes`;
+            const filtered = getParadoxesBySource(this.currentSource);
+            const sourceLabel = this.currentSource === 'all' ? '' : ` (${this.currentSource.toUpperCase()})`;
+            countEl.textContent = `${filtered.length} Paradoxes${sourceLabel}`;
         }
     }
 
     setupEventListeners() {
+        // Source filter buttons
+        document.getElementById('source-all')?.addEventListener('click', () => this.setSource('all'));
+        document.getElementById('source-hn')?.addEventListener('click', () => this.setSource('hn'));
+        document.getElementById('source-wikipedia')?.addEventListener('click', () => this.setSource('wikipedia'));
+
         // View toggle buttons
         document.getElementById('view-categories')?.addEventListener('click', () => this.showCategories());
         document.getElementById('view-points')?.addEventListener('click', () => this.showByPoints());
         document.getElementById('sort-order')?.addEventListener('change', () => this.updatePointsSort());
+    }
+
+    setSource(source) {
+        this.currentSource = source;
+
+        // Update button states
+        document.getElementById('source-all')?.classList.toggle('active', source === 'all');
+        document.getElementById('source-hn')?.classList.toggle('active', source === 'hn');
+        document.getElementById('source-wikipedia')?.classList.toggle('active', source === 'wikipedia');
+
+        // Re-render content
+        this.renderCategorySections();
+        this.updateParadoxCount();
+
+        if (this.currentView === 'points') {
+            this.buildSortedView();
+        }
     }
 
     showCategories() {
@@ -362,7 +387,7 @@ class ParadoxApp {
     buildSortedView() {
         const container = document.getElementById('sorted-paradoxes-container');
         const sortOrder = document.getElementById('sort-order').value;
-        const sorted = getParadoxesByPoints(sortOrder === 'desc');
+        const sorted = getParadoxesByPoints(sortOrder === 'desc', this.currentSource);
 
         container.innerHTML = sorted.map((p, index) => {
             const pointsDisplay = typeof p.points === 'number' ? `${p.points} pts` : p.points;
