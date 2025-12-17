@@ -1527,6 +1527,406 @@ export const paradoxes = [
         description: 'To sell information, you must reveal it, but then why pay?',
         category: 'economics',
         simulator: 'arrow-info-simulator'
+    },
+    {
+        id: 'no-show',
+        title: 'No-Show Paradox',
+        points: 70,
+        description: 'In some voting systems, voting can cause your candidate to LOSE.',
+        category: 'social',
+        simulator: 'no-show-simulator'
+    },
+    {
+        id: 'fenno',
+        title: "Fenno's Paradox",
+        points: 70,
+        description: 'Americans disapprove of Congress but keep reelecting their own representatives.',
+        category: 'social',
+        simulator: 'fenno-simulator'
+    },
+    {
+        id: 'freedom-paradox',
+        title: 'Paradox of Freedom',
+        points: 75,
+        description: 'Unlimited freedom for all leads to less freedom overall.',
+        category: 'philosophy',
+        simulator: 'freedom-paradox-simulator'
+    },
+    {
+        id: 'democracy-paradox',
+        title: 'Democracy Paradox',
+        points: 75,
+        description: 'Democratic voters can elect a tyrant who ends democracy.',
+        category: 'social',
+        simulator: 'democracy-paradox-simulator'
+    },
+    {
+        id: 'stability-instability',
+        title: 'Stability-Instability Paradox',
+        points: 80,
+        description: 'Nuclear weapons prevent major wars but enable minor conflicts.',
+        category: 'social',
+        simulator: 'stability-instability-simulator'
+    },
+    {
+        id: 'prevention-paradox',
+        title: 'Prevention Paradox',
+        points: 65,
+        description: 'Population-wide health measures help few individuals but many in aggregate.',
+        category: 'social',
+        simulator: 'prevention-paradox-simulator'
+    },
+    {
+        id: 'kavka-toxin',
+        title: "Kavka's Toxin Puzzle",
+        points: 75,
+        description: 'Can you intend to drink non-lethal toxin tomorrow just to receive reward today?',
+        category: 'philosophy',
+        simulator: 'kavka-toxin-simulator'
+    },
+    {
+        id: 'liberal-paradox',
+        title: 'Liberal Paradox',
+        points: 70,
+        description: 'Minimal individual liberty conflicts with Pareto efficiency.',
+        category: 'economics',
+        simulator: 'liberal-paradox-simulator'
+    },
+    {
+        id: 'fredkin',
+        title: "Fredkin's Paradox",
+        points: 65,
+        description: 'The more similar two choices, the longer we take to decide despite mattering less.',
+        category: 'behavior',
+        simulator: 'fredkin-simulator'
+    },
+    {
+        id: 'intentionally-blank',
+        title: 'Intentionally Blank Paradox',
+        points: 60,
+        description: "'This page intentionally left blank' contradicts itself by not being blank.",
+        category: 'logic',
+        simulator: 'intentionally-blank-simulator'
+    },
+    {
+        id: 'predestination',
+        title: 'Predestination Paradox',
+        points: 80,
+        description: 'Time travel causes the very event you traveled back to prevent.',
+        category: 'philosophy',
+        simulator: 'predestination-simulator'
+    },
+    {
+        id: 'temporal-paradox',
+        title: 'Temporal Paradox',
+        points: 80,
+        description: 'Altering the past removes your reason to travel back in time.',
+        category: 'philosophy',
+        simulator: 'temporal-paradox-simulator'
+    },
+    {
+        id: 'hitler-murder',
+        title: 'Hitler Murder Paradox',
+        points: 75,
+        description: "If you killed Hitler, you'd remove your reason to time travel.",
+        category: 'philosophy',
+        simulator: 'hitler-murder-simulator'
+    },
+    {
+        id: 'observer-effect',
+        title: 'Observer Effect Paradox',
+        points: 75,
+        description: 'The act of measurement changes what is being measured.',
+        category: 'scientific',
+        simulator: 'observer-effect-simulator'
+    },
+    {
+        id: 'air-conditioning',
+        title: 'Air Conditioning Paradox',
+        points: 70,
+        description: 'Cooling buildings contributes to heating the planet.',
+        category: 'scientific',
+        simulator: 'air-conditioning-simulator'
+    },
+    {
+        id: 'navigation-paradox',
+        title: 'Navigation Paradox',
+        points: 65,
+        description: 'More precise navigation can lead to more collisions.',
+        category: 'social',
+        simulator: 'navigation-paradox-simulator'
+    },
+    {
+        id: 'progress-paradox',
+        title: 'Progress Paradox',
+        points: 70,
+        description: "Despite material progress, people aren't happier.",
+        category: 'social',
+        simulator: 'progress-paradox-simulator'
+    },
+    {
+        id: 'white-horse',
+        title: 'White Horse Paradox',
+        points: 70,
+        description: "Ancient Chinese paradox: 'A white horse is not a horse'.",
+        category: 'logic',
+        simulator: 'white-horse-simulator'
+    },
+    {
+        id: 'tritone',
+        title: 'Tritone Paradox',
+        points: 65,
+        description: 'Same musical tones heard as ascending by some, descending by others.',
+        category: 'behavior',
+        simulator: 'tritone-simulator'
+    },
+    {
+        id: 'second-wind',
+        title: 'Second Wind Paradox',
+        points: 60,
+        description: 'Sleep-deprived people can suddenly feel more awake.',
+        category: 'behavior',
+        simulator: 'second-wind-simulator'
+    },
+    {
+        id: 'boltzmann-brain',
+        title: 'Boltzmann Brain',
+        points: 85,
+        description: 'Random quantum fluctuation creating a brain is more likely than ordered universe evolution.',
+        category: 'scientific',
+        simulator: 'boltzmann-brain-simulator'
+    },
+    {
+        id: 'schrodinger-cat',
+        title: "Schrodinger's Cat",
+        points: 90,
+        description: 'Cat in superposition of alive and dead until observed.',
+        category: 'physics',
+        simulator: 'schrodinger-cat-simulator'
+    },
+    {
+        id: 'quantum-zeno',
+        title: 'Quantum Zeno Effect',
+        points: 80,
+        description: 'Continuously observing a quantum system prevents it from changing state.',
+        category: 'physics',
+        simulator: 'quantum-zeno-simulator'
+    },
+    {
+        id: 'double-slit',
+        title: 'Double-Slit Experiment',
+        points: 90,
+        description: 'Particles behave as waves when unobserved, particles when observed.',
+        category: 'physics',
+        simulator: 'double-slit-simulator'
+    },
+    {
+        id: 'twin-paradox',
+        title: 'Twin Paradox',
+        points: 85,
+        description: 'Space traveler returns younger than their twin who stayed on Earth.',
+        category: 'physics',
+        simulator: 'twin-paradox-simulator'
+    },
+    {
+        id: 'maxwell-demon',
+        title: "Maxwell's Demon",
+        points: 85,
+        description: 'A hypothetical demon could violate the second law of thermodynamics.',
+        category: 'physics',
+        simulator: 'maxwell-demon-simulator'
+    },
+    {
+        id: 'mpemba',
+        title: 'Mpemba Effect',
+        points: 70,
+        description: 'Hot water can freeze faster than cold water under certain conditions.',
+        category: 'physics',
+        simulator: 'mpemba-simulator'
+    },
+    {
+        id: 'levinthal',
+        title: "Levinthal's Paradox",
+        points: 80,
+        description: 'Proteins fold in milliseconds despite astronomical number of possible configurations.',
+        category: 'scientific',
+        simulator: 'levinthal-simulator'
+    },
+    {
+        id: 'loschmidt',
+        title: "Loschmidt's Paradox",
+        points: 75,
+        description: 'Time-reversible microscopic laws vs irreversible macroscopic entropy.',
+        category: 'physics',
+        simulator: 'loschmidt-simulator'
+    },
+    {
+        id: 'gibbs',
+        title: 'Gibbs Paradox',
+        points: 70,
+        description: 'Entropy of mixing identical gases should be zero, yet calculation gives non-zero.',
+        category: 'physics',
+        simulator: 'gibbs-simulator'
+    },
+    {
+        id: 'c-value',
+        title: 'C-Value Paradox',
+        points: 75,
+        description: "Genome size doesn't correlate with organism complexity - an onion has more DNA than humans.",
+        category: 'scientific',
+        simulator: 'c-value-simulator'
+    },
+    {
+        id: 'gray-paradox',
+        title: "Gray's Paradox",
+        points: 70,
+        description: 'Dolphins achieve high speeds with seemingly insufficient muscle power.',
+        category: 'scientific',
+        simulator: 'gray-paradox-simulator'
+    },
+    {
+        id: 'plankton-paradox',
+        title: 'Plankton Paradox',
+        points: 75,
+        description: 'Many phytoplankton species coexist despite competing for same resources (violates competitive exclusion).',
+        category: 'scientific',
+        simulator: 'plankton-paradox-simulator'
+    },
+    {
+        id: 'pesticide-paradox',
+        title: 'Pesticide Paradox',
+        points: 70,
+        description: 'Pesticide use can actually increase pest populations by killing natural predators.',
+        category: 'scientific',
+        simulator: 'pesticide-paradox-simulator'
+    },
+    {
+        id: 'enrichment-paradox',
+        title: 'Enrichment Paradox',
+        points: 70,
+        description: 'Adding nutrients to an ecosystem can cause species extinction.',
+        category: 'scientific',
+        simulator: 'enrichment-paradox-simulator'
+    },
+    {
+        id: 'hormesis',
+        title: 'Hormesis Paradox',
+        points: 65,
+        description: 'Small doses of toxins can be beneficial while larger doses are harmful.',
+        category: 'scientific',
+        simulator: 'hormesis-simulator'
+    },
+    {
+        id: 'exercise-paradox',
+        title: 'Exercise Paradox',
+        points: 75,
+        description: 'Active hunter-gatherers burn similar calories as sedentary office workers.',
+        category: 'behavior',
+        simulator: 'exercise-paradox-simulator'
+    },
+    {
+        id: 'lek-paradox',
+        title: 'Lek Paradox',
+        points: 70,
+        description: 'Female mate choice should erode genetic variance, yet it persists.',
+        category: 'scientific',
+        simulator: 'lek-paradox-simulator'
+    },
+    {
+        id: 'lombard-paradox',
+        title: "Lombard's Paradox",
+        points: 65,
+        description: 'Hamstrings and quadriceps contract simultaneously during squats.',
+        category: 'scientific',
+        simulator: 'lombard-paradox-simulator'
+    },
+    {
+        id: 'glucose-paradox',
+        title: 'Glucose Paradox',
+        points: 60,
+        description: 'Liver stores more glycogen than can be explained by glucose uptake.',
+        category: 'scientific',
+        simulator: 'glucose-paradox-simulator'
+    },
+    {
+        id: 'bertrand-econ',
+        title: 'Bertrand Paradox (Economics)',
+        points: 65,
+        description: 'In duopoly competition, Nash equilibrium leads to zero profits.',
+        category: 'economics',
+        simulator: 'bertrand-econ-simulator'
+    },
+    {
+        id: 'edgeworth',
+        title: 'Edgeworth Paradox',
+        points: 60,
+        description: 'Capacity constraints prevent price equilibrium in oligopoly.',
+        category: 'economics',
+        simulator: 'edgeworth-simulator'
+    },
+    {
+        id: 'grossman-stiglitz',
+        title: 'Grossman-Stiglitz Paradox',
+        points: 70,
+        description: 'If markets are perfectly efficient, no one has incentive to gather information.',
+        category: 'economics',
+        simulator: 'grossman-stiglitz-simulator'
+    },
+    {
+        id: 'icarus-paradox',
+        title: 'Icarus Paradox',
+        points: 75,
+        description: 'The very success factors of companies lead to their downfall.',
+        category: 'economics',
+        simulator: 'icarus-paradox-simulator'
+    },
+    {
+        id: 'scitovsky',
+        title: 'Scitovsky Paradox',
+        points: 60,
+        description: 'Social welfare criteria can simultaneously recommend and oppose a change.',
+        category: 'economics',
+        simulator: 'scitovsky-simulator'
+    },
+    {
+        id: 'plenty-paradox',
+        title: 'Paradox of Plenty',
+        points: 70,
+        description: 'Resource-rich countries often have worse economic growth (resource curse).',
+        category: 'economics',
+        simulator: 'plenty-paradox-simulator'
+    },
+    {
+        id: 'banknote',
+        title: 'Banknote Paradox',
+        points: 60,
+        description: 'Cash usage declining but demand for banknotes increasing.',
+        category: 'economics',
+        simulator: 'banknote-simulator'
+    },
+    {
+        id: 'deaton',
+        title: 'Deaton Paradox',
+        points: 65,
+        description: 'Consumption smoother than income, contradicting lifecycle models.',
+        category: 'economics',
+        simulator: 'deaton-simulator'
+    },
+    {
+        id: 'gibson',
+        title: "Gibson's Paradox",
+        points: 60,
+        description: 'Interest rates positively correlated with prices, not inflation.',
+        category: 'economics',
+        simulator: 'gibson-simulator'
+    },
+    {
+        id: 'european-paradox',
+        title: 'European Paradox',
+        points: 65,
+        description: 'Europe leads in science but lags in innovation commercialization.',
+        category: 'economics',
+        simulator: 'european-paradox-simulator'
     }
 ];
 
