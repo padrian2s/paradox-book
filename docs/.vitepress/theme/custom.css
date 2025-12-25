@@ -1,0 +1,163 @@
+/* Paradox Explorer Custom Theme */
+
+:root {
+  /* Brand colors matching original design */
+  --vp-c-brand-1: #6366f1;
+  --vp-c-brand-2: #8b5cf6;
+  --vp-c-brand-3: #a78bfa;
+  --vp-c-brand-soft: rgba(99, 102, 241, 0.14);
+
+  /* Accent colors */
+  --accent: #f59e0b;
+}
+
+/* Force dark mode */
+:root {
+  --vp-c-bg: #0f172a;
+  --vp-c-bg-soft: #1e293b;
+  --vp-c-bg-mute: #1e293b;
+  --vp-c-bg-alt: #0f172a;
+
+  --vp-c-divider: #334155;
+  --vp-c-divider-light: #475569;
+
+  --vp-c-text-1: #e2e8f0;
+  --vp-c-text-2: #94a3b8;
+  --vp-c-text-3: #64748b;
+}
+
+.dark {
+  --vp-c-bg: #0f172a;
+  --vp-c-bg-soft: #1e293b;
+  --vp-c-bg-mute: #1e293b;
+  --vp-c-bg-alt: #0f172a;
+
+  --vp-c-divider: #334155;
+  --vp-c-divider-light: #475569;
+
+  --vp-c-text-1: #e2e8f0;
+  --vp-c-text-2: #94a3b8;
+  --vp-c-text-3: #64748b;
+}
+
+/* Simulator styling */
+.vp-doc [class*="-simulator"] {
+  display: block;
+  margin: 1.5rem 0;
+  padding: 1.5rem;
+  background: var(--vp-c-bg-soft);
+  border-radius: 8px;
+  border: 1px solid var(--vp-c-divider);
+}
+
+/* Paradox metadata badges */
+.paradox-meta {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  align-items: center;
+}
+
+.badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.badge.hn {
+  background: #ff6600;
+  color: white;
+}
+
+.badge.wikipedia {
+  background: #3b82f6;
+  color: white;
+}
+
+.points {
+  color: var(--vp-c-text-2);
+  font-size: 0.875rem;
+}
+
+/* Paradox grid for category index */
+.paradox-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.paradox-grid li {
+  list-style: none;
+  padding: 1rem;
+  background: var(--vp-c-bg-soft);
+  border-radius: 8px;
+  border: 1px solid var(--vp-c-divider);
+  transition: border-color 0.2s;
+}
+
+.paradox-grid li:hover {
+  border-color: var(--vp-c-brand-1);
+}
+
+/* Table styling for by-points page */
+.vp-doc table {
+  width: 100%;
+}
+
+.vp-doc th,
+.vp-doc td {
+  padding: 0.75rem 1rem;
+}
+
+/* Hero section customization */
+.VPHero .name {
+  background: linear-gradient(120deg, var(--vp-c-brand-1), var(--vp-c-brand-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Feature cards */
+.VPFeature {
+  background: var(--vp-c-bg-soft) !important;
+  border: 1px solid var(--vp-c-divider) !important;
+}
+
+.VPFeature:hover {
+  border-color: var(--vp-c-brand-1) !important;
+}
+
+/* Sidebar styling */
+.VPSidebar {
+  background: var(--vp-c-bg) !important;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--vp-c-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--vp-c-divider);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--vp-c-divider-light);
+}
+
+/* CSS variables for simulators (matching original) */
+:root {
+  --primary: #6366f1;
+  --secondary: #8b5cf6;
+  --accent: #f59e0b;
+  --bg: #0f172a;
+  --card: #1e293b;
+  --text: #e2e8f0;
+  --muted: #94a3b8;
+}

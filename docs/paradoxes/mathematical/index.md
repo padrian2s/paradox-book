@@ -1,0 +1,23 @@
+---
+title: "Mathematical & Statistical Paradoxes"
+---
+
+# Mathematical & Statistical Paradoxes
+
+<div class="paradox-grid">
+
+- [**Potato Paradox**](./potato) - 100 lbs of potatoes that are 99% water. After drying to 98% water, they weigh only 50 lbs. A 1% chan...
+
+- [**Simpson's Paradox**](./simpson) - A trend appears in several groups but disappears or reverses when groups are combined. A treatment c...
+
+- [**St. Petersburg Paradox**](./st-petersburg) - A game with INFINITE expected value, yet no rational person would pay much to play. Flip coins until...
+
+- [**Braess' Paradox**](./braess) - Adding a new road to a traffic network can actually INCREASE travel time for everyone. Removing road...
+
+- [**Coin Rotation Paradox**](./coin-rotation) - Roll a coin around an identical coin. It makes TWO full rotations while traversing ONE circumference...
+
+- [**Will Rogers Phenomenon**](./will-rogers) - Moving one person from Group A to Group B can raise the average of BOTH groups! How is this possible...
+
+- [**All Horses Are the Same Color**](./all-horses) - A flawed induction proof seems to show all horses are the same color. Where exactly does the logic f...
+
+</div>
