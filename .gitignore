@@ -8,5 +8,8 @@ docs/.vitepress/cache/
 docs/.vitepress/dist/
 docs/.vitepress/.temp/
 
+# Old site backup
+old-site/
+
 # Logs
 *.log
