@@ -33,6 +33,10 @@ export default defineConfig({
   },
 
   vite: {
+    server: {
+      host: '0.0.0.0',  // Listen on all interfaces for remote development
+      port: 5173
+    },
     // Allow importing web components
     vue: {
       template: {
